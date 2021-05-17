@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Select, Slider } from "../UI/components";
+import { Input, Select, Slider } from "UI";
 
 export const placeInput = (id, data, func, dispatch) => (
 	<Input

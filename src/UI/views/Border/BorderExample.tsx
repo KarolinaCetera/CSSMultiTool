@@ -1,11 +1,11 @@
 import React from "react";
-import { Example } from "../../components";
+import { Example } from "UI";
 import {
 	useBorderType,
 	useBorderRadius,
 	useBorderColor,
 	useBorderWidth,
-} from "../../../hooks";
+} from "hooks";
 
 export const BorderExample = () => {
 	const width = useBorderWidth();

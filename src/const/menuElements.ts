@@ -7,7 +7,7 @@ import {
 	TextShadow,
 	Transform,
 	About,
-} from "../UI/views";
+} from "UI";
 
 export const menuElements = [
 	{ name: "Home", path: "/", component: Home },

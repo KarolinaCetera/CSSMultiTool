@@ -1,5 +1,5 @@
 import React from "react";
-import { Example } from "../../components";
+import { Example } from "UI";
 import {
 	useBoxShadowBlur,
 	useBoxShadowSpread,

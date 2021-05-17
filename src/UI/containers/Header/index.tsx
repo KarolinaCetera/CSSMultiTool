@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Header.module.scss";
-import { Menu, Title } from "../../components";
+import { Title, Menu } from "UI";
 
 export const Header = ({ menuElements }) => {
 	return (

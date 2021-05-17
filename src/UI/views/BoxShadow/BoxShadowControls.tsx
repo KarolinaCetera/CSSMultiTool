@@ -1,14 +1,14 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { boxShadowProps } from "../../../const";
-import { placeInput, placeSlider } from "../../../utils";
+import { boxShadowProps } from "const";
+import { placeInput, placeSlider } from "utils";
 import {
 	useBoxShadowBlur,
 	useBoxShadowHorizontal,
 	useBoxShadowOpacity,
 	useBoxShadowSpread,
 	useBoxShadowVertical,
-} from "../../../hooks";
+} from "hooks";
 
 export const BoxShadowControls = () => {
 	const dispatch = useDispatch();

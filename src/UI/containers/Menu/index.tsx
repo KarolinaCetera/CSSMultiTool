@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MenuDrawer } from "./MenuDrawer/MenuDrawer";
+import { MenuDrawer } from "./MenuDrawer";
 
 export const Menu = ({ menuElements }) => {
 	const [isOpen, setIsOpen] = useState(false);

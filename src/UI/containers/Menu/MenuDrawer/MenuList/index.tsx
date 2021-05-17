@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./MenuList.module.scss";
-import { MenuElement } from "../MenuElement/MenuElement";
+import { MenuElement } from "./MenuElement";
 
 export const MenuList = ({ menuElements, toggleDrawer }) => {
 	return (

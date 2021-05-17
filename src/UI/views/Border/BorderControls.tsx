@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { placeInput, placeSelect } from "../../../utils";
-import { borderProps, options } from "../../../const";
+import { placeInput, placeSelect } from "utils";
+import { borderProps, options } from "const";
 
 export const BorderControls = () => {
 	const dispatch = useDispatch();

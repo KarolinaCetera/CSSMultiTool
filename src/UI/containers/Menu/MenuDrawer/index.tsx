@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Drawer } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import { MenuList } from "../MenuList/MenuList";
+import { MenuList } from "./MenuList";
 
 export const MenuDrawer = ({ menuElements, toggleDrawer, isOpen }) => {
 	return (
