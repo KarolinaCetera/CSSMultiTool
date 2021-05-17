@@ -30,3 +30,15 @@ interface BoxShadowStyles extends DefaultRootState {
 	boxShadowSpread: { spread: number };
 	boxShadowVertical: { vertical: number };
 }
+
+interface TextShadowStyles extends DefaultRootState {
+	textShadowBlur: {
+		blur: number;
+	};
+	textShadowColor: {
+		textColor: string;
+	};
+	textShadowHorizontal: { textHorizontal: number };
+	textShadowOpacity: { textOpacity: number };
+	textShadowVertical: { textVertical: number };
+}

@@ -10,7 +10,11 @@ import {
 	blurSliceReducer,
 	spreadSliceReducer,
 	verticalSliceReducer,
+	textHorizontalSliceReducer,
+	textOpacitySliceReducer,
+	textVerticalSliceReducer,
 } from "./features";
+import { textBlurSliceReducer, textColorSliceReducer } from "./features";
 
 export const store = configureStore({
 	reducer: {
@@ -24,5 +28,10 @@ export const store = configureStore({
 		boxShadowBlur: blurSliceReducer,
 		boxShadowSpread: spreadSliceReducer,
 		boxShadowVertical: verticalSliceReducer,
+		textShadowBlur: textBlurSliceReducer,
+		textShadowColor: textColorSliceReducer,
+		textShadowHorizontal: textHorizontalSliceReducer,
+		textShadowOpacity: textOpacitySliceReducer,
+		textShadowVertical: textVerticalSliceReducer,
 	},
 });

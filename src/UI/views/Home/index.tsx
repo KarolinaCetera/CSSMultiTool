@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { buyMeACoffee } from "const";
 
 export const Home = () => {
+	console.log("Home");
 	return (
 		<div className={classes.home}>
 			<h2>CSSMultiTool</h2>

@@ -7,7 +7,7 @@ import {
 	useBoxShadowColor,
 	useBoxShadowHorizontal,
 	useBoxShadowOpacity,
-} from "../../../hooks";
+} from "hooks";
 
 export const BoxShadowExample = () => {
 	const blur = useBoxShadowBlur();

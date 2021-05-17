@@ -1,10 +1,11 @@
 import React from "react";
 import classes from "./App.module.scss";
 import { BrowserRouter } from "react-router-dom";
-import { Header, Main } from "./UI";
-import { menuElements } from "./const";
+import { Header, Main } from "UI";
+import { menuElements } from "const";
 
 export const App: React.FC = () => {
+	console.log("App");
 	return (
 		<BrowserRouter>
 			<div className={classes.App}>

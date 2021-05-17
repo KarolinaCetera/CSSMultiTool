@@ -1,4 +1,5 @@
 import {
+	About,
 	Border,
 	BoxShadow,
 	ColorConverter,
@@ -6,8 +7,7 @@ import {
 	Home,
 	TextShadow,
 	Transform,
-	About,
-} from "UI";
+} from "../UI/views";
 
 export const menuElements = [
 	{ name: "Home", path: "/", component: Home },
