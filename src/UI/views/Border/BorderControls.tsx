@@ -1,18 +1,20 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { placeInput, placeSelect } from "utils";
-import { borderProps, options } from "const";
+import { borderProps, borderTypeOptions } from "const";
 
 export const BorderControls = () => {
 	const dispatch = useDispatch();
 
 	return (
 		<form action="">
-			{borderProps.map(({ func, data, value }) => {
+			{borderProps.map(({ value, func }) => {
 				if (value === "type") {
-					return placeSelect(value, data, options, func, dispatch);
+					return placeSelect(value, borderTypeOptions, func, dispatch);
+				} else if (value === "radius") {
+					return placeInput(value, func, dispatch);
 				} else {
-					return placeInput(value, data, func, dispatch);
+					return placeInput(value, func, dispatch);
 				}
 			})}
 		</form>

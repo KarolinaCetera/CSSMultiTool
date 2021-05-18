@@ -1,22 +1,13 @@
-// type MenuElement = {
-// 	name: string;
-// 	path: string;
-// };
-//
-// type MenuElements = MenuElement[];
-
 import { DefaultRootState } from "react-redux";
 
 interface ToggleDrawer {
 	toggleDrawer: (visibility: boolean) => void;
 }
 
-interface BorderStyles extends DefaultRootState {
-	borderWidth: { width: number };
-	borderType: { type: string };
-	borderColor: { color: string };
-	borderRadius: { radius: string };
-}
+type styleOption = {
+	value: string;
+	name: string;
+};
 
 interface BoxShadowStyles extends DefaultRootState {
 	boxShadowBlur: {

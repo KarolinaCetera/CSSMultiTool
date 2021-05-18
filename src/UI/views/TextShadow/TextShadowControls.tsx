@@ -23,7 +23,7 @@ export const TextShadowControls = () => {
 				case "blur":
 					return placeSlider(value, blur, 1, 0, 300, func, dispatch);
 				case "color":
-					return placeInput(value, "text", func, dispatch);
+					return placeInput("text", func, dispatch);
 				case "horizontal":
 					return placeSlider(value, horizontal, 1, -200, 200, func, dispatch);
 				case "opacity":

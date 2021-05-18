@@ -1,20 +1,31 @@
 import React from "react";
 import { Input, Select, Slider } from "UI";
+import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
+import { styleOption } from "../../typings";
 
-export const placeInput = (id, data, func, dispatch) => (
+export const placeInput = (
+	value: string,
+	func: ActionCreatorWithPayload<string>,
+	dispatch: Dispatch<any>,
+) => (
 	<Input
-		id={id}
-		type={data}
+		id={value}
+		type={value}
 		key={`${func}`}
 		dispatch={dispatch}
 		modifyStyle={func}
 	/>
 );
 
-export const placeSelect = (value, data, options, func, dispatch) => (
+export const placeSelect = (
+	value: string,
+	options: styleOption[],
+	func: ActionCreatorWithPayload<string>,
+	dispatch: Dispatch<any>,
+) => (
 	<Select
 		id={value}
-		name={data}
+		name={value}
 		options={options}
 		key={`${func}`}
 		dispatch={dispatch}
