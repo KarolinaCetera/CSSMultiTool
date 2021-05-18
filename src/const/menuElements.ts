@@ -1,13 +1,37 @@
-import {
-	About,
-	Border,
-	BoxShadow,
-	ColorConverter,
-	Fonts,
-	Home,
-	TextShadow,
-	Transform,
-} from "../UI/views";
+import React from "react";
+
+const Home = React.lazy(() =>
+	import("../UI/views/Home").then(({ Home }) => ({ default: Home })),
+);
+const Border = React.lazy(() =>
+	import("../UI/views/Border").then(({ Border }) => ({ default: Border })),
+);
+const BoxShadow = React.lazy(() =>
+	import("../UI/views/BoxShadow").then(({ BoxShadow }) => ({
+		default: BoxShadow,
+	})),
+);
+const TextShadow = React.lazy(() =>
+	import("../UI/views/TextShadow").then(({ TextShadow }) => ({
+		default: TextShadow,
+	})),
+);
+const ColorConverter = React.lazy(() =>
+	import("../UI/views/ColorConverter").then(({ ColorConverter }) => ({
+		default: ColorConverter,
+	})),
+);
+const Fonts = React.lazy(() =>
+	import("../UI/views/Fonts").then(({ Fonts }) => ({ default: Fonts })),
+);
+const Transform = React.lazy(() =>
+	import("../UI/views/Transform").then(({ Transform }) => ({
+		default: Transform,
+	})),
+);
+const About = React.lazy(() =>
+	import("../UI/views/Home").then(({ Home }) => ({ default: Home })),
+);
 
 export const menuElements = [
 	{ name: "Home", path: "/", component: Home },
