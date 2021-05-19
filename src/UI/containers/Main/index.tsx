@@ -1,7 +1,9 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 
-export const Main = ({ menuElements }) => {
+export const Main: (props: { menuElements: menuElement[] }) => JSX.Element = ({
+	menuElements,
+}) => {
 	return (
 		<main>
 			<Switch>

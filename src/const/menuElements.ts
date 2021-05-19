@@ -30,10 +30,10 @@ const Transform = React.lazy(() =>
 	})),
 );
 const About = React.lazy(() =>
-	import("../UI/views/Home").then(({ Home }) => ({ default: Home })),
+	import("../UI/views/About").then(({ About }) => ({ default: About })),
 );
 
-export const menuElements = [
+export const menuElements: menuElement[] = [
 	{ name: "Home", path: "/", component: Home },
 	{ name: "Border", path: "/border", component: Border },
 	{ name: "BoxShadow", path: "/boxShadow", component: BoxShadow },

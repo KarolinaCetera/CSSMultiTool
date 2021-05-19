@@ -3,7 +3,11 @@ import { Button, Drawer } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { MenuList } from "./MenuList";
 
-export const MenuDrawer = ({ menuElements, toggleDrawer, isOpen }) => {
+export const MenuDrawer: (props: {
+	menuElements: menuElement[];
+	toggleDrawer;
+	isOpen: boolean;
+}) => JSX.Element = ({ menuElements, toggleDrawer, isOpen }) => {
 	return (
 		<>
 			<Button onClick={toggleDrawer(true)}>

@@ -1,4 +1,15 @@
 import React from "react";
+import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
+
+interface SliderComponentProps {
+	id: string;
+	value: number;
+	step: number;
+	min: number;
+	max: number;
+	modifyStyle: ActionCreatorWithPayload<any>;
+	dispatch: Dispatch<any>;
+}
 
 export const Slider = ({
 	id,
@@ -6,9 +17,9 @@ export const Slider = ({
 	step,
 	min,
 	max,
-	dispatch,
 	modifyStyle,
-}) => {
+	dispatch,
+}: SliderComponentProps) => {
 	return (
 		<div>
 			<label htmlFor={id}>{id.toUpperCase()}</label>

@@ -1,6 +1,6 @@
 import { setWidth, setColor, setRadius, setType } from "../store";
-import { BorderProps } from "../../typings/border";
-import { styleOption } from "../../typings";
+
+import { BorderProps } from "../../typings/styleProperties";
 
 export const borderTypeOptions: styleOption[] = [
 	{ value: "", name: "Choose border type" },

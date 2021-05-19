@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { TextShadowStyles } from "../../typings";
-import { hexToRgb } from "../utils";
+import { hexToRgb } from "utils";
+import { TextShadowStyles } from "../../typings/styleProperties";
 
 export const useTextShadowBlur = () =>
 	useSelector((state: TextShadowStyles) => state.textShadowBlur.blur);

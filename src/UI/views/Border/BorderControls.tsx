@@ -7,14 +7,14 @@ export const BorderControls = () => {
 	const dispatch = useDispatch();
 
 	return (
-		<form action="">
+		<form>
 			{borderProps.map(({ value, func }) => {
 				if (value === "type") {
 					return placeSelect(value, borderTypeOptions, func, dispatch);
 				} else if (value === "radius") {
-					return placeInput(value, func, dispatch);
+					return placeInput(value, "number", func, dispatch);
 				} else {
-					return placeInput(value, func, dispatch);
+					return placeInput(value, "text", func, dispatch);
 				}
 			})}
 		</form>

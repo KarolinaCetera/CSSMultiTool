@@ -1,5 +1,5 @@
 import React from "react";
-import { ViewElement, ViewBox } from "../UI/containers";
+import { ViewElement, ViewBox } from "UI";
 
 export const withControls = (ControlsComponent, ExampleComponent) => {
 	const HOC = () => {

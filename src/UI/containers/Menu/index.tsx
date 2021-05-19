@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { MenuDrawer } from "./MenuDrawer";
 
-export const Menu = ({ menuElements }) => {
+export const Menu: (props: { menuElements: menuElement[] }) => JSX.Element = ({
+	menuElements,
+}) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleDrawer = () => (

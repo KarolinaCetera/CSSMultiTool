@@ -2,7 +2,10 @@ import React from "react";
 import classes from "./MenuList.module.scss";
 import { MenuElement } from "./MenuElement";
 
-export const MenuList = ({ menuElements, toggleDrawer }) => {
+export const MenuList: (props: {
+	menuElements: menuElement[];
+	toggleDrawer;
+}) => JSX.Element = ({ menuElements, toggleDrawer }) => {
 	return (
 		<ul className={classes.menuList}>
 			{menuElements.map((menuElement) => (

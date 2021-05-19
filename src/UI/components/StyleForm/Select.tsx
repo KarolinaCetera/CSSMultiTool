@@ -1,6 +1,21 @@
 import React from "react";
+import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
 
-export const Select = ({ name, dispatch, modifyStyle, options, id }) => {
+interface SelectComponentProps {
+	id: string;
+	name: string;
+	options: styleOption[];
+	modifyStyle: ActionCreatorWithPayload<any>;
+	dispatch: Dispatch<any>;
+}
+
+export const Select = ({
+	name,
+	dispatch,
+	modifyStyle,
+	options,
+	id,
+}: SelectComponentProps) => {
 	return (
 		<div>
 			<label htmlFor={id}>{id.toUpperCase()}</label>

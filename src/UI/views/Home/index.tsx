@@ -3,8 +3,7 @@ import classes from "./Home.module.scss";
 import { Link } from "react-router-dom";
 import { buyMeACoffee } from "const";
 
-export const Home = () => {
-	console.log("Home");
+export const Home: React.FC = () => {
 	return (
 		<div className={classes.home}>
 			<h2>CSSMultiTool</h2>
