@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { BoxShadowStyles } from "../../typings/styleProperties";
-import { hexToRgb } from "../utils";
+import { hexToRgb } from "utils";
+import { BoxShadowStyles } from "typings";
 
 export const useBoxShadowBlur = () =>
 	useSelector((state: BoxShadowStyles) => state.boxShadowBlur.blur);

@@ -1,4 +1,5 @@
 import React from "react";
+import { menuElement } from "typings";
 
 const Home = React.lazy(() =>
 	import("../UI/views/Home").then(({ Home }) => ({ default: Home })),

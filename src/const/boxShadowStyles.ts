@@ -6,8 +6,9 @@ import {
 	setSpread,
 	setVertical,
 } from "../store";
+import { CSSPropsTypes } from "typings";
 
-export const boxShadowProps = [
+export const boxShadowProps: CSSPropsTypes[] = [
 	{ value: "blur", func: setBlur },
 	{ value: "color", func: setShadowColor },
 	{ value: "horizontal", func: setHorizontal },

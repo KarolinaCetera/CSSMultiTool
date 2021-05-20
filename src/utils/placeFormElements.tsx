@@ -1,6 +1,7 @@
 import React from "react";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
 import { Input, Select, Slider } from "UI";
+import { styleOption } from "typings";
 
 export const placeInput = (
 	value: string,

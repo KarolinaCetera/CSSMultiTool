@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Drawer } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import { MenuList } from "./MenuList";
+import { menuElement } from "typings";
 
 export const MenuDrawer: (props: {
 	menuElements: menuElement[];

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MenuDrawer } from "./MenuDrawer";
+import { menuElement } from "typings";
 
 export const Menu: (props: { menuElements: menuElement[] }) => JSX.Element = ({
 	menuElements,

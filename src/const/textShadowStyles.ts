@@ -5,8 +5,9 @@ import {
 	setTextOpacity,
 	setTextVertical,
 } from "../store";
+import { CSSPropsTypes } from "typings";
 
-export const textShadowProps = [
+export const textShadowProps: CSSPropsTypes[] = [
 	{ value: "blur", func: setTextBlur },
 	{ value: "color", func: setTextColor },
 	{ value: "horizontal", func: setTextHorizontal },

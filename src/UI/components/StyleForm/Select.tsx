@@ -1,5 +1,6 @@
 import React from "react";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
+import { styleOption } from "typings";
 
 interface SelectComponentProps {
 	id: string;

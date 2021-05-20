@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./MenuList.module.scss";
 import { MenuElement } from "./MenuElement";
+import { menuElement } from "typings";
 
 export const MenuList: (props: {
 	menuElements: menuElement[];

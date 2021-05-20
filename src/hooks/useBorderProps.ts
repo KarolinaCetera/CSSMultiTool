@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { BorderStyles } from "../../typings/styleProperties";
+import { BorderStyles } from "typings";
 
 export const useBorderWidth = () =>
 	useSelector((state: BorderStyles) => state.borderWidth.width);
