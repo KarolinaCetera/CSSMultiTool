@@ -5,7 +5,7 @@ import {
 	setOpacity,
 	setSpread,
 	setVertical,
-} from "../store";
+} from "store";
 import { CSSPropsTypes } from "typings";
 
 export const boxShadowProps: CSSPropsTypes[] = [

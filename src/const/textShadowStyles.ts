@@ -4,7 +4,7 @@ import {
 	setTextHorizontal,
 	setTextOpacity,
 	setTextVertical,
-} from "../store";
+} from "store";
 import { CSSPropsTypes } from "typings";
 
 export const textShadowProps: CSSPropsTypes[] = [
