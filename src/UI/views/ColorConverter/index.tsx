@@ -1,4 +1,4 @@
-import { withControls } from "../../../HOC";
+import { withControls } from "HOC";
 import { ColorConverterControls } from "./ColorConverterControls";
 import { ColorConverterExample } from "./ColorConverterExample";
 

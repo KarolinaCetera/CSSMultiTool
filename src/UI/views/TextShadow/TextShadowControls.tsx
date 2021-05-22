@@ -9,7 +9,7 @@ import {
 import { textShadowProps } from "const";
 import { placeInput, placeSlider } from "utils";
 
-export const TextShadowControls = () => {
+export const TextShadowControls: React.FC = () => {
 	const dispatch = useDispatch();
 
 	const blur = useTextShadowBlur();
@@ -17,8 +17,8 @@ export const TextShadowControls = () => {
 	const opacity = useTextShadowOpacity();
 	const vertical = useTextShadowVertical();
 
-	const placeProperForm = () => {
-		return textShadowProps.map(({ value, func }) => {
+	const placeProperForm = () =>
+		textShadowProps.map(({ value, func }) => {
 			switch (value) {
 				case "blur":
 					return placeSlider(value, blur, 1, 0, 300, func, dispatch);
@@ -32,7 +32,6 @@ export const TextShadowControls = () => {
 					return placeSlider(value, vertical, 1, -200, 200, func, dispatch);
 			}
 		});
-	};
 
 	return <div>{placeProperForm()}</div>;
 };

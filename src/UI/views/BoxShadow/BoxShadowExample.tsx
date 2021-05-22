@@ -9,7 +9,7 @@ import {
 	useBoxShadowOpacity,
 } from "hooks";
 
-export const BoxShadowExample = () => {
+export const BoxShadowExample: React.FC = () => {
 	const blur = useBoxShadowBlur();
 	const color = useBoxShadowColor();
 	const horizontal = useBoxShadowHorizontal();

@@ -8,7 +8,7 @@ import {
 	useTextShadowVertical,
 } from "hooks";
 
-export const TextShadowExample = () => {
+export const TextShadowExample: React.FC = () => {
 	const blur = useTextShadowBlur();
 	const color = useTextShadowColor();
 	const horizontal = useTextShadowHorizontal();

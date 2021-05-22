@@ -53,3 +53,12 @@ interface TextShadowStyles extends DefaultRootState {
 	textShadowOpacity: { textOpacity: number };
 	textShadowVertical: { textVertical: number };
 }
+
+type dispatchGeneric = {
+	payload: ActionCreatorWithPayload<any>;
+	type: string;
+};
+
+type rgbColor =
+	| { r: number; g: number; b: number }
+	| { r: string; g: string; b: string };

@@ -24,6 +24,7 @@ module.exports = {
 		"linebreak-style": ["error", "unix"],
 		"react/jsx-props-no-spreading": "off",
 		"react/prop-types": "off",
+		"react/display-name": 0,
 		"explicit-module-boundary-types": "off",
 		"max-len": [
 			"warn",

@@ -1,5 +1,6 @@
 import React from "react";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
+import { dispatchGeneric } from "typings";
 
 interface SliderComponentProps {
 	id: string;
@@ -8,10 +9,10 @@ interface SliderComponentProps {
 	min: number;
 	max: number;
 	modifyStyle: ActionCreatorWithPayload<any>;
-	dispatch: Dispatch<any>;
+	dispatch: Dispatch<dispatchGeneric>;
 }
 
-export const Slider = ({
+export const Slider: (props: SliderComponentProps) => JSX.Element = ({
 	id,
 	value,
 	step,

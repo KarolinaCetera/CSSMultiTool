@@ -10,7 +10,7 @@ import {
 	useBoxShadowVertical,
 } from "hooks";
 
-export const BoxShadowControls = () => {
+export const BoxShadowControls: React.FC = () => {
 	const dispatch = useDispatch();
 
 	const blur = useBoxShadowBlur();
@@ -19,8 +19,8 @@ export const BoxShadowControls = () => {
 	const spread = useBoxShadowSpread();
 	const vertical = useBoxShadowVertical();
 
-	const placeProperForm = () => {
-		return boxShadowProps.map(({ value, func }) => {
+	const placeProperForm = () =>
+		boxShadowProps.map(({ value, func }) => {
 			switch (value) {
 				case "blur":
 					return placeSlider(value, blur, 1, 0, 300, func, dispatch);
@@ -36,7 +36,6 @@ export const BoxShadowControls = () => {
 					return placeSlider(value, vertical, 1, -200, 200, func, dispatch);
 			}
 		});
-	};
 
 	return <div>{placeProperForm()}</div>;
 };

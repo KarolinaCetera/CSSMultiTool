@@ -7,7 +7,7 @@ import {
 	useBorderWidth,
 } from "hooks";
 
-export const BorderExample = () => {
+export const BorderExample: React.FC = () => {
 	const width = useBorderWidth();
 	const color = useBorderColor();
 	const radius = useBorderRadius();

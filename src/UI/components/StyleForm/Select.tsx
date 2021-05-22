@@ -1,31 +1,29 @@
 import React from "react";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
-import { styleOption } from "typings";
+import { dispatchGeneric, styleOption } from "typings";
 
 interface SelectComponentProps {
-	id: string;
-	name: string;
+	value: string;
 	options: styleOption[];
-	modifyStyle: ActionCreatorWithPayload<any>;
-	dispatch: Dispatch<any>;
+	func: ActionCreatorWithPayload<any>;
+	dispatch: Dispatch<dispatchGeneric>;
 }
 
-export const Select = ({
-	name,
-	dispatch,
-	modifyStyle,
+export const Select: (props: SelectComponentProps) => JSX.Element = ({
+	value,
 	options,
-	id,
+	func,
+	dispatch,
 }: SelectComponentProps) => {
 	return (
 		<div>
-			<label htmlFor={id}>{id.toUpperCase()}</label>
+			<label htmlFor={value}>{value.toUpperCase()}</label>
 			<select
-				name={name}
-				id={id}
+				name={value}
+				id={value}
 				onChange={(e) => {
 					e.preventDefault();
-					dispatch(modifyStyle(e.target.value));
+					dispatch(func(e.target.value));
 				}}
 			>
 				{options.map(({ name, value }) => (
