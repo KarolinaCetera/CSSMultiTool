@@ -17,6 +17,15 @@ interface menuElement {
 	component: React.LazyExoticComponent<React.FC<unknown>>;
 }
 
+type MenuElements = {
+	menuElements: menuElement[];
+};
+
+interface DrawerProps extends MenuElements {
+	toggleDrawer;
+	isOpen?: boolean;
+}
+
 interface CSSPropsTypes {
 	value: string;
 	func: ActionCreatorWithPayload<string>;
@@ -40,6 +49,18 @@ interface BoxShadowStyles extends DefaultRootState {
 	boxShadowOpacity: { opacity: number };
 	boxShadowSpread: { spread: number };
 	boxShadowVertical: { vertical: number };
+}
+
+interface FontStyles extends DefaultRootState {
+	fontColor: { color: string };
+	fontSize: { fontSize: number };
+	fontStyle: { fontStyle: string };
+	fontWeight: { fontWeight: number | string };
+	letterSpacing: { letterSpacing: number };
+	lineHeight: { lineHeight: number };
+	textDecoration: { textDecoration: string };
+	textTransform: { textTransform: string };
+	wordSpacing: { wordSpacing: string };
 }
 
 interface TextShadowStyles extends DefaultRootState {

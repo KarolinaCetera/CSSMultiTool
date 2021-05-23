@@ -9,7 +9,7 @@ interface InputComponentProps {
 	dispatch: Dispatch<dispatchGeneric>;
 }
 
-export const Input: (props: InputComponentProps) => JSX.Element = ({
+export const Input: React.FC<InputComponentProps> = ({
 	id,
 	type,
 	modifyStyle,

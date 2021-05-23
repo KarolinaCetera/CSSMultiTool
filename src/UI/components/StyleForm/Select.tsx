@@ -9,29 +9,27 @@ interface SelectComponentProps {
 	dispatch: Dispatch<dispatchGeneric>;
 }
 
-export const Select: (props: SelectComponentProps) => JSX.Element = ({
+export const Select: React.FC<SelectComponentProps> = ({
 	value,
 	options,
 	func,
 	dispatch,
-}: SelectComponentProps) => {
-	return (
-		<div>
-			<label htmlFor={value}>{value.toUpperCase()}</label>
-			<select
-				name={value}
-				id={value}
-				onChange={(e) => {
-					e.preventDefault();
-					dispatch(func(e.target.value));
-				}}
-			>
-				{options.map(({ name, value }) => (
-					<option key={value} value={value}>
-						{name}
-					</option>
-				))}
-			</select>
-		</div>
-	);
-};
+}: SelectComponentProps) => (
+	<div>
+		<label htmlFor={value}>{value.toUpperCase()}</label>
+		<select
+			name={value}
+			id={value}
+			onChange={(e) => {
+				e.preventDefault();
+				dispatch(func(e.target.value));
+			}}
+		>
+			{options.map(({ name, value }) => (
+				<option key={value} value={value}>
+					{name}
+				</option>
+			))}
+		</select>
+	</div>
+);

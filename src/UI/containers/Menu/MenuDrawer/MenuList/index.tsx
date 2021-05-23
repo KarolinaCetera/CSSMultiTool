@@ -1,22 +1,20 @@
 import React from "react";
 import classes from "./MenuList.module.scss";
+import { DrawerProps } from "typings";
 import { MenuElement } from "./MenuElement";
-import { menuElement } from "typings";
 
-export const MenuList: (props: {
-	menuElements: menuElement[];
-	toggleDrawer;
-}) => JSX.Element = ({ menuElements, toggleDrawer }) => {
-	return (
-		<ul className={classes.menuList}>
-			{menuElements.map((menuElement) => (
-				<MenuElement
-					toggleDrawer={toggleDrawer}
-					key={menuElement.name}
-					name={menuElement.name}
-					path={menuElement.path}
-				/>
-			))}
-		</ul>
-	);
-};
+export const MenuList: React.FC<DrawerProps> = ({
+	menuElements,
+	toggleDrawer,
+}) => (
+	<ul className={classes.menuList}>
+		{menuElements.map((menuElement) => (
+			<MenuElement
+				toggleDrawer={toggleDrawer}
+				key={menuElement.name}
+				name={menuElement.name}
+				path={menuElement.path}
+			/>
+		))}
+	</ul>
+);

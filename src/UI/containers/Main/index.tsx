@@ -1,10 +1,8 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import { menuElement } from "../../../typings";
+import { MenuElements } from "typings";
 
-export const Main: (props: { menuElements: menuElement[] }) => JSX.Element = ({
-	menuElements,
-}) => {
+export const Main: React.FC<MenuElements> = ({ menuElements }) => {
 	return (
 		<main>
 			<Switch>

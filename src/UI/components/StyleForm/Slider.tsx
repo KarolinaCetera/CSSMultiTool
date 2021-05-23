@@ -12,7 +12,7 @@ interface SliderComponentProps {
 	dispatch: Dispatch<dispatchGeneric>;
 }
 
-export const Slider: (props: SliderComponentProps) => JSX.Element = ({
+export const Slider: React.FC<SliderComponentProps> = ({
 	id,
 	value,
 	step,
@@ -20,23 +20,21 @@ export const Slider: (props: SliderComponentProps) => JSX.Element = ({
 	max,
 	modifyStyle,
 	dispatch,
-}: SliderComponentProps) => {
-	return (
-		<div>
-			<label htmlFor={id}>{id.toUpperCase()}</label>
-			<input
-				id={id}
-				type="range"
-				value={value}
-				step={step}
-				min={min}
-				max={max}
-				onChange={(e) => {
-					e.preventDefault();
-					dispatch(modifyStyle(e.target.value));
-				}}
-			/>
-			<div>{value}</div>
-		</div>
-	);
-};
+}: SliderComponentProps) => (
+	<div>
+		<label htmlFor={id}>{id.toUpperCase()}</label>
+		<input
+			id={id}
+			type="range"
+			value={value}
+			step={step}
+			min={min}
+			max={max}
+			onChange={(e) => {
+				e.preventDefault();
+				dispatch(modifyStyle(e.target.value));
+			}}
+		/>
+		<div>{value}</div>
+	</div>
+);

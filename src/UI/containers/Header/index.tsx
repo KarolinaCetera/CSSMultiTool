@@ -1,11 +1,9 @@
 import React from "react";
 import classes from "./Header.module.scss";
+import { MenuElements } from "typings";
 import { Title, Menu } from "UI";
-import { menuElement } from "typings";
 
-export const Header: (props: {
-	menuElements: menuElement[];
-}) => JSX.Element = ({ menuElements }) => (
+export const Header: React.FC<MenuElements> = ({ menuElements }) => (
 	<header className={classes.header}>
 		<Menu menuElements={menuElements} />
 		<Title />
