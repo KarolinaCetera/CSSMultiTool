@@ -4,6 +4,5 @@ export * from "./fontStyleSlice";
 export * from "./fontWeightSlice";
 export * from "./letterSpacingSlice";
 export * from "./lineHeightSlice";
-export * from "./textDecorationSlice";
 export * from "./textTransformSlice";
 export * from "./wordSpacingSlice";

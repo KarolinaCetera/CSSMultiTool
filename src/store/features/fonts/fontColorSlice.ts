@@ -14,4 +14,4 @@ export const fontColorSlice = createSlice({
 
 export const { setFontColor } = fontColorSlice.actions;
 
-export const fontColorSliceReducer = fontColorSlice.reducer;
+export const fontColorReducer = fontColorSlice.reducer;

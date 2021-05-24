@@ -7,7 +7,7 @@ interface ToggleDrawer {
 }
 
 type styleOption = {
-	value: string;
+	value: string | number;
 	name: string;
 };
 
@@ -55,7 +55,7 @@ interface FontStyles extends DefaultRootState {
 	fontColor: { color: string };
 	fontSize: { fontSize: number };
 	fontStyle: { fontStyle: string };
-	fontWeight: { fontWeight: number | string };
+	fontWeight: { fontWeight: string | number };
 	letterSpacing: { letterSpacing: number };
 	lineHeight: { lineHeight: number };
 	textDecoration: { textDecoration: string };

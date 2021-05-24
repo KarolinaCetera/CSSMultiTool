@@ -1,25 +1,25 @@
 import { useSelector } from "react-redux";
 import { FontStyles } from "typings";
 
-export const useFontColor = () =>
+export const useFontColor = (): string =>
 	useSelector((state: FontStyles) => state.fontColor.color);
 
-export const useFontSize = () =>
+export const useFontSize = (): number =>
 	useSelector((state: FontStyles) => state.fontSize.fontSize);
 
-export const useFontStyle = () =>
+export const useFontStyle = (): string =>
 	useSelector((state: FontStyles) => state.fontStyle.fontStyle);
 
-export const useFontWeight = () =>
+export const useFontWeight = (): number | string =>
 	useSelector((state: FontStyles) => state.fontWeight.fontWeight);
 
-export const useLetterSpacing = () =>
+export const useLetterSpacing = (): number =>
 	useSelector((state: FontStyles) => state.letterSpacing.letterSpacing);
 
-export const useLineHeight = () =>
+export const useLineHeight = (): number =>
 	useSelector((state: FontStyles) => state.lineHeight.lineHeight);
 
-export const useTextDecoration = () =>
+export const useTextDecoration = (): string =>
 	useSelector((state: FontStyles) => state.textDecoration.textDecoration);
 
 export const useTextTransform = () =>

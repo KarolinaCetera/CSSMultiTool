@@ -1,4 +1,9 @@
-import { setWidth, setColor, setRadius, setType } from "store";
+import {
+	setBorderColor,
+	setBorderRadius,
+	setBorderType,
+	setBorderWidth,
+} from "store";
 import { CSSPropsTypes, styleOption } from "typings";
 
 export const borderTypeOptions: styleOption[] = [
@@ -15,8 +20,8 @@ export const borderTypeOptions: styleOption[] = [
 ];
 
 export const borderProps: CSSPropsTypes[] = [
-	{ value: "width", func: setWidth },
-	{ value: "type", func: setType },
-	{ value: "color", func: setColor },
-	{ value: "radius", func: setRadius },
+	{ value: "width", func: setBorderWidth },
+	{ value: "type", func: setBorderType },
+	{ value: "color", func: setBorderColor },
+	{ value: "radius", func: setBorderRadius },
 ];

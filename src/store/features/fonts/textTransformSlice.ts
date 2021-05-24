@@ -14,4 +14,4 @@ export const textTransformSlice = createSlice({
 
 export const { setTextTransform } = textTransformSlice.actions;
 
-export const textTransformSliceReducer = textTransformSlice.reducer;
+export const textTransformReducer = textTransformSlice.reducer;
