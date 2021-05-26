@@ -8,7 +8,7 @@ import {
 	setTextTransform,
 	setWordSpacing,
 } from "store";
-import { CSSPropsTypes, styleOption } from "typings";
+import { styleOption } from "typings";
 
 export const fontProps = [
 	{ value: "color", func: setFontColor },

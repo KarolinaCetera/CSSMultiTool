@@ -32,47 +32,79 @@ interface CSSPropsTypes {
 }
 
 interface BorderStyles extends DefaultRootState {
-	borderWidth: { width: number };
-	borderType: { type: string };
-	borderColor: { color: string };
-	borderRadius: { radius: string };
+	border: {
+		borderWidth: { width: number };
+		borderType: { type: string };
+		borderColor: { color: string };
+		borderRadius: { radius: string };
+	};
 }
 
 interface BoxShadowStyles extends DefaultRootState {
-	boxShadowBlur: {
-		blur: number;
+	boxShadow: {
+		boxShadowBlur: {
+			blur: number;
+		};
+		boxShadowColor: {
+			shadowColor: string;
+		};
+		boxShadowHorizontal: { horizontal: number };
+		boxShadowOpacity: { opacity: number };
+		boxShadowSpread: { spread: number };
+		boxShadowVertical: { vertical: number };
 	};
-	boxShadowColor: {
-		shadowColor: string;
+}
+
+type dropShadowTypes = {
+	offsetX: number;
+	offsetY: number;
+	blurRadius: number;
+	color: string;
+};
+
+interface FilterStyles extends DefaultRootState {
+	filter: {
+		filterBlur: { blur: number };
+		filterBrightness: { brightness: number };
+		filterContrast: { contrast: number };
+		filterDropShadow: {
+			dropShadow: dropShadowTypes;
+		};
+		filterGreyScale: { greyScale: number };
+		filterHueRotate: { hueRotate: number };
+		filterInvert: { invert: number };
+		filterOpacity: { opacity: number };
+		filterSaturate: { saturate: number };
+		filterSepia: { sepia: number };
 	};
-	boxShadowHorizontal: { horizontal: number };
-	boxShadowOpacity: { opacity: number };
-	boxShadowSpread: { spread: number };
-	boxShadowVertical: { vertical: number };
 }
 
 interface FontStyles extends DefaultRootState {
-	fontColor: { color: string };
-	fontSize: { fontSize: number };
-	fontStyle: { fontStyle: string };
-	fontWeight: { fontWeight: string | number };
-	letterSpacing: { letterSpacing: number };
-	lineHeight: { lineHeight: number };
-	textDecoration: { textDecoration: string };
-	textTransform: { textTransform: string };
-	wordSpacing: { wordSpacing: string };
+	fonts: {
+		fontColor: { color: string };
+		fontSize: { fontSize: number };
+		fontStyle: { fontStyle: string };
+		fontWeight: { fontWeight: string | number };
+		letterSpacing: { letterSpacing: number };
+		lineHeight: { lineHeight: number };
+		textDecoration: { textDecoration: string };
+		textTransform: { textTransform: string };
+		wordSpacing: { wordSpacing: string };
+	};
 }
 
 interface TextShadowStyles extends DefaultRootState {
-	textShadowBlur: {
-		blur: number;
+	textShadow: {
+		textShadowBlur: {
+			blur: number;
+		};
+		textShadowColor: {
+			textColor: string;
+		};
+		textShadowHorizontal: { textHorizontal: number };
+		textShadowOpacity: { textOpacity: number };
+		textShadowVertical: { textVertical: number };
 	};
-	textShadowColor: {
-		textColor: string;
-	};
-	textShadowHorizontal: { textHorizontal: number };
-	textShadowOpacity: { textOpacity: number };
-	textShadowVertical: { textVertical: number };
 }
 
 type dispatchGeneric = {

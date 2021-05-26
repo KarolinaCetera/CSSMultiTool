@@ -1,17 +1,12 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import {
-	useFontColor,
 	useFontSize,
-	useFontStyle,
-	// useFontWeight,
 	useLetterSpacing,
 	useLineHeight,
-	useTextTransform,
 	useWordSpacing,
 } from "hooks";
 import {
-	boxShadowProps,
 	fontProps,
 	fontStyleOptions,
 	fontWeightOptions,
