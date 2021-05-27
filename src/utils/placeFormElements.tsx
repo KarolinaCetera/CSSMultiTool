@@ -12,7 +12,7 @@ export const placeInput: (value, type, func, dispatch) => JSX.Element = (
 	<Input
 		id={value}
 		type={type}
-		key={`${func}`}
+		key={`${func}${value}`}
 		dispatch={dispatch}
 		modifyStyle={func}
 	/>
