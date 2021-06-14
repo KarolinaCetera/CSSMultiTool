@@ -5,7 +5,9 @@ import { Title, Menu } from "UI";
 
 export const Header: React.FC<MenuElements> = ({ menuElements }) => (
 	<header className={classes.header}>
-		<Menu menuElements={menuElements} />
-		<Title />
+		<div className={classes.space}>
+			<Menu menuElements={menuElements} />
+			<Title />
+		</div>
 	</header>
 );
