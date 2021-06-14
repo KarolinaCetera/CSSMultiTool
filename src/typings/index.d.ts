@@ -36,7 +36,7 @@ interface BorderStyles extends DefaultRootState {
 		borderWidth: { width: number };
 		borderType: { type: string };
 		borderColor: { color: string };
-		borderRadius: { radius: string };
+		borderRadius: { radius: number };
 	};
 }
 
@@ -115,3 +115,5 @@ type dispatchGeneric = {
 type rgbColor =
 	| { r: number; g: number; b: number }
 	| { r: string; g: string; b: string };
+
+type hooksReturnType = string | number | dropShadowTypes;

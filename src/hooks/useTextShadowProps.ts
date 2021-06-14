@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { hexToRgb } from "utils";
-import { rgbColor, TextShadowStyles } from "typings";
+import { hooksReturnType, rgbColor, TextShadowStyles } from "typings";
 
-export const useTextShadowBlur = (): number =>
+export const useTextShadowBlur = (): hooksReturnType =>
 	useSelector(
 		(state: TextShadowStyles) => state.textShadow.textShadowBlur.blur,
 	);
@@ -12,18 +12,18 @@ export const useTextShadowColor = (): rgbColor =>
 		hexToRgb(state.textShadow.textShadowColor.textColor),
 	);
 
-export const useTextShadowHorizontal = (): number =>
+export const useTextShadowHorizontal = (): hooksReturnType =>
 	useSelector(
 		(state: TextShadowStyles) =>
 			state.textShadow.textShadowHorizontal.textHorizontal,
 	);
 
-export const useTextShadowOpacity = (): number =>
+export const useTextShadowOpacity = (): hooksReturnType =>
 	useSelector(
 		(state: TextShadowStyles) => state.textShadow.textShadowOpacity.textOpacity,
 	);
 
-export const useTextShadowVertical = (): number =>
+export const useTextShadowVertical = (): hooksReturnType =>
 	useSelector(
 		(state: TextShadowStyles) =>
 			state.textShadow.textShadowVertical.textVertical,

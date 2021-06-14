@@ -14,7 +14,7 @@ export const BorderControls: React.FC = () => {
 				case "color":
 					return placeInput(value, "color", func, dispatch);
 				default:
-					return placeInput(value, "text", func, dispatch);
+					return placeInput(value, "number", func, dispatch);
 			}
 		});
 

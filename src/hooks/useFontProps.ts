@@ -1,29 +1,29 @@
 import { useSelector } from "react-redux";
-import { FontStyles } from "typings";
+import { FontStyles, hooksReturnType } from "typings";
 
-export const useFontColor = (): string =>
+export const useFontColor = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontColor.color);
 
-export const useFontSize = (): number =>
+export const useFontSize = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontSize.fontSize);
 
-export const useFontStyle = (): string =>
+export const useFontStyle = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontStyle.fontStyle);
 
-export const useFontWeight = (): number | string =>
+export const useFontWeight = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontWeight.fontWeight);
 
-export const useLetterSpacing = (): number =>
+export const useLetterSpacing = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.letterSpacing.letterSpacing);
 
-export const useLineHeight = (): number =>
+export const useLineHeight = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.lineHeight.lineHeight);
 
-export const useTextDecoration = (): string =>
+export const useTextDecoration = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.textDecoration.textDecoration);
 
-export const useTextTransform = (): string =>
+export const useTextTransform = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.textTransform.textTransform);
 
-export const useWordSpacing = (): string =>
+export const useWordSpacing = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.wordSpacing.wordSpacing);

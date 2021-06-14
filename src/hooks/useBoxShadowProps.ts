@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import { hexToRgb } from "utils";
-import { BoxShadowStyles, rgbColor } from "typings";
+import { BoxShadowStyles, hooksReturnType, rgbColor } from "typings";
 
-export const useBoxShadowBlur = (): number =>
+export const useBoxShadowBlur = (): hooksReturnType =>
 	useSelector((state: BoxShadowStyles) => state.boxShadow.boxShadowBlur.blur);
 
 export const useBoxShadowColor = (): rgbColor =>
@@ -10,22 +10,22 @@ export const useBoxShadowColor = (): rgbColor =>
 		hexToRgb(state.boxShadow.boxShadowColor.shadowColor),
 	);
 
-export const useBoxShadowHorizontal = (): number =>
+export const useBoxShadowHorizontal = (): hooksReturnType =>
 	useSelector(
 		(state: BoxShadowStyles) => state.boxShadow.boxShadowHorizontal.horizontal,
 	);
 
-export const useBoxShadowOpacity = (): number =>
+export const useBoxShadowOpacity = (): hooksReturnType =>
 	useSelector(
 		(state: BoxShadowStyles) => state.boxShadow.boxShadowOpacity.opacity,
 	);
 
-export const useBoxShadowSpread = (): number =>
+export const useBoxShadowSpread = (): hooksReturnType =>
 	useSelector(
 		(state: BoxShadowStyles) => state.boxShadow.boxShadowSpread.spread,
 	);
 
-export const useBoxShadowVertical = (): number =>
+export const useBoxShadowVertical = (): hooksReturnType =>
 	useSelector(
 		(state: BoxShadowStyles) => state.boxShadow.boxShadowVertical.vertical,
 	);

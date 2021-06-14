@@ -7,7 +7,7 @@ import {
 	textShadowReducers,
 } from "./reducers";
 
-export const createReducer = (injectedReducers = {}) =>
+export const createReducer = (injectedReducers: Record<string, unknown> = {}) =>
 	combineReducers({
 		border: borderReducers,
 		boxShadow: boxShadowReducers,

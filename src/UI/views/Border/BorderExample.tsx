@@ -15,7 +15,7 @@ export const BorderExample: React.FC = () => {
 
 	const borderStyle = {
 		border: `${width}px ${type} ${color}`,
-		borderRadius: radius,
+		borderRadius: `${radius}px`,
 	};
 
 	return <Example style={borderStyle} />;

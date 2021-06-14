@@ -1,36 +1,36 @@
 import { useSelector } from "react-redux";
-import { dropShadowTypes, FilterStyles } from "../typings";
+import { FilterStyles, hooksReturnType } from "../typings";
 
-export const useFilterBlur = (): number =>
+export const useFilterBlur = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterBlur.blur);
 
-export const useFilterBrightness = (): number =>
+export const useFilterBrightness = (): hooksReturnType =>
 	useSelector(
 		(state: FilterStyles) => state.filter.filterBrightness.brightness,
 	);
 
-export const useFilterContrast = (): number =>
+export const useFilterContrast = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterContrast.contrast);
 
-export const useFilterDropShadow = (): dropShadowTypes =>
+export const useFilterDropShadow = (): hooksReturnType =>
 	useSelector(
 		(state: FilterStyles) => state.filter.filterDropShadow.dropShadow,
 	);
 
-export const useFilterGreyScale = (): number =>
+export const useFilterGreyScale = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterGreyScale.greyScale);
 
-export const useFilterHueRotate = (): number =>
+export const useFilterHueRotate = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterHueRotate.hueRotate);
 
-export const useFilterInvert = (): number =>
+export const useFilterInvert = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterInvert.invert);
 
-export const useFilterOpacity = (): number =>
+export const useFilterOpacity = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterOpacity.opacity);
 
-export const useFilterSaturate = (): number =>
+export const useFilterSaturate = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterSaturate.saturate);
 
-export const useFilterSepia = (): number =>
+export const useFilterSepia = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterSepia.sepia);

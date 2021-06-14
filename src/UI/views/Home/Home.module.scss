@@ -1,4 +1,6 @@
 .home {
+  width: 30%;
+  margin: 0 auto;
   padding-top: 80px;
   color: #c7c7c7;
   font-size: 30px;
@@ -10,7 +12,8 @@
   }
 
   .links {
-    margin: 50px;
+    width: 60%;
+    margin: 30px auto;
     a {
       display: block;
       margin-bottom: 10px;
@@ -21,6 +24,12 @@
       border: 2px solid #c7c7c7;
       border-radius: 5px;
       text-decoration: none;
+      transition: 0s;
+      &:hover {
+        background-color: #c7c7c7;
+        color: #3a3d45;
+        transition: 0.5s;
+      }
     }
   }
 }

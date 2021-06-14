@@ -10,12 +10,12 @@ import {
 	setFilterSaturate,
 	setFilterSepia,
 } from "store";
-import { styleOption } from "typings";
+import { CSSPropsTypes } from "typings";
 
-export const filterProps = [
+export const filterProps: CSSPropsTypes[] = [
 	{ value: "blur", func: setFilterBlur },
 	{ value: "brightness", func: setFilterBrightness },
-	{ value: "contras", func: setFilterContrast },
+	{ value: "contrast", func: setFilterContrast },
 	{ value: "dropShadow", func: setFilterDropShadow },
 	{ value: "greyScale", func: setFilterGreyScale },
 	{ value: "hue", func: setFilterHue },
