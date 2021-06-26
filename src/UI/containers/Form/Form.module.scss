@@ -1,0 +1,14 @@
+.form {
+  width: 60%;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    font-size: 20px;
+    background: #a88da8;
+    border-radius: 5px;
+  }
+}

@@ -1,6 +1,8 @@
 import React from "react";
+import classes from "./Select.module.scss";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
 import { dispatchGeneric, styleOption } from "typings";
+import { capitalize } from "const";
 
 interface SelectComponentProps {
 	value: string;
@@ -15,8 +17,8 @@ export const Select: React.FC<SelectComponentProps> = ({
 	func,
 	dispatch,
 }: SelectComponentProps) => (
-	<div>
-		<label htmlFor={value}>{value.toUpperCase()}</label>
+	<div className={classes.select}>
+		<label htmlFor={value}>{capitalize(value)}</label>
 		<select
 			name={value}
 			id={value}

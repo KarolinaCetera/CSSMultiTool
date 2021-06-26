@@ -9,9 +9,5 @@
 
   @include respond-to("large") {
     flex-direction: row;
-    & div {
-      height: 80%;
-      width: 45%;
-    }
   }
 }

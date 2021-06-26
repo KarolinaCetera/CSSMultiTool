@@ -1,6 +1,10 @@
 import {
 	setBorderColor,
 	setBorderRadius,
+	setBorderRadiusBL,
+	setBorderRadiusBR,
+	setBorderRadiusTL,
+	setBorderRadiusTR,
 	setBorderType,
 	setBorderWidth,
 } from "store";
@@ -24,4 +28,8 @@ export const borderProps: CSSPropsTypes[] = [
 	{ value: "type", func: setBorderType },
 	{ value: "color", func: setBorderColor },
 	{ value: "radius", func: setBorderRadius },
+	{ value: "radiusTL", func: setBorderRadiusTL },
+	{ value: "radiusTR", func: setBorderRadiusTR },
+	{ value: "radiusBR", func: setBorderRadiusBR },
+	{ value: "radiusBL", func: setBorderRadiusBL },
 ];

@@ -1,6 +1,7 @@
 import React from "react";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
 import { dispatchGeneric } from "typings";
+import { capitalize } from "const";
 
 interface SliderComponentProps {
 	id: string;
@@ -22,7 +23,7 @@ export const Slider: React.FC<SliderComponentProps> = ({
 	dispatch,
 }: SliderComponentProps) => (
 	<div>
-		<label htmlFor={id}>{id.toUpperCase()}</label>
+		<label htmlFor={id}>{capitalize(id)}</label>
 		<input
 			id={id}
 			type="range"

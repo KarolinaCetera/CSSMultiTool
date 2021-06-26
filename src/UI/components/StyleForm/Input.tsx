@@ -1,6 +1,7 @@
 import React from "react";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
 import { dispatchGeneric } from "typings";
+import { capitalize } from "const";
 
 interface InputComponentProps {
 	id: string;
@@ -16,7 +17,7 @@ export const Input: React.FC<InputComponentProps> = ({
 	dispatch,
 }: InputComponentProps) => (
 	<div>
-		<label htmlFor={id}>{id.toUpperCase()}</label>
+		<label htmlFor={id}>{capitalize(type)}</label>
 		<input
 			id={id}
 			type={type}

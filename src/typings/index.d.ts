@@ -37,6 +37,10 @@ interface BorderStyles extends DefaultRootState {
 		borderType: { type: string };
 		borderColor: { color: string };
 		borderRadius: { radius: number };
+		borderRadiusTL: { radiusTL: number };
+		borderRadiusTR: { radiusTR: number };
+		borderRadiusBR: { radiusBR: number };
+		borderRadiusBL: { radiusBL: number };
 	};
 }
 
