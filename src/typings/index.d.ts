@@ -1,6 +1,7 @@
 import "./styleProperties";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { DefaultRootState } from "react-redux";
+import { CSSProperties } from "react";
 
 interface ToggleDrawer {
 	toggleDrawer: (visibility: boolean) => void;
@@ -108,6 +109,14 @@ interface TextShadowStyles extends DefaultRootState {
 		textShadowHorizontal: { textHorizontal: number };
 		textShadowOpacity: { textOpacity: number };
 		textShadowVertical: { textVertical: number };
+	};
+}
+
+interface Global {
+	global: {
+		radiusMode: {
+			mode: string;
+		};
 	};
 }
 

@@ -9,6 +9,7 @@ import {
 	useBorderRadiusBL,
 	useBorderRadiusBR,
 	useBorderRadiusTR,
+	useRadiusMode,
 } from "hooks";
 
 export const BorderExample: React.FC = () => {
@@ -21,16 +22,20 @@ export const BorderExample: React.FC = () => {
 	const radiusBL = useBorderRadiusBL();
 	const type = useBorderType();
 
-	/** TODO add checkbox: user has to choose if he wants to use one slider or four  */
+	const { mode } = useRadiusMode();
 
 	const borderStyle = {
 		border: `${width}px ${type} ${color}`,
 		borderRadius: `${radius}px`,
+	};
+
+	const borderExtendedStyle = {
+		border: `${width}px ${type} ${color}`,
 		borderTopLeftRadius: `${radiusTL}px`,
 		borderTopRightRadius: `${radiusTR}px`,
 		borderBottomRightRadius: `${radiusBR}px`,
 		borderBottomLeftRadius: `${radiusBL}px`,
 	};
 
-	return <Example style={borderStyle} />;
+	return <Example style={mode === "all" ? borderStyle : borderExtendedStyle} />;
 };

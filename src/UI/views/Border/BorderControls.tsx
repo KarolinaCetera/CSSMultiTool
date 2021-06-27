@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "./BorderControls.module.scss";
 import { useDispatch } from "react-redux";
 import { borderProps, borderTypeOptions } from "const";
 import { placeInput, placeSelect, placeSlider } from "utils";
@@ -9,8 +10,10 @@ import {
 	useBorderRadiusTL,
 	useBorderRadiusTR,
 	useBorderWidth,
+	useRadiusMode,
 } from "hooks";
 import { Form } from "../../containers";
+import RadiusControls from "./RadiusControls";
 
 export const BorderControls: React.FC = () => {
 	const dispatch = useDispatch();
@@ -20,6 +23,8 @@ export const BorderControls: React.FC = () => {
 	const radiusTR = useBorderRadiusTR();
 	const radiusBR = useBorderRadiusBR();
 	const radiusBL = useBorderRadiusBL();
+
+	const { mode } = useRadiusMode();
 
 	const placeProperForm = () =>
 		borderProps.map(({ value, func }) => {
@@ -31,33 +36,37 @@ export const BorderControls: React.FC = () => {
 				case "width":
 					return placeSlider(value, width, 1, 0, 100, func, dispatch);
 				case "radiusTL":
-					return placeSlider("Top left", radiusTL, 1, 0, 100, func, dispatch);
+					return (
+						mode === "separate" &&
+						placeSlider("Top left", radiusTL, 1, 0, 100, func, dispatch)
+					);
 				case "radiusTR":
-					return placeSlider("Top right", radiusTR, 1, 0, 100, func, dispatch);
+					return (
+						mode === "separate" &&
+						placeSlider("Top right", radiusTR, 1, 0, 100, func, dispatch)
+					);
 				case "radiusBR":
-					return placeSlider(
-						"Bottom right",
-						radiusBR,
-						1,
-						0,
-						100,
-						func,
-						dispatch,
+					return (
+						mode === "separate" &&
+						placeSlider("Bottom right", radiusBR, 1, 0, 100, func, dispatch)
 					);
 				case "radiusBL":
-					return placeSlider(
-						"Bottom left",
-						radiusBL,
-						1,
-						0,
-						100,
-						func,
-						dispatch,
+					return (
+						mode === "separate" &&
+						placeSlider("Bottom left", radiusBL, 1, 0, 100, func, dispatch)
 					);
-				default:
-					return placeSlider(value, radius, 1, 0, 150, func, dispatch);
+				case "radius":
+					return (
+						mode === "all" &&
+						placeSlider(value, radius, 1, 0, 150, func, dispatch)
+					);
 			}
 		});
 
-	return <Form>{placeProperForm()}</Form>;
+	return (
+		<div className={classes.borderControls}>
+			<RadiusControls />
+			<Form>{placeProperForm()}</Form>
+		</div>
+	);
 };

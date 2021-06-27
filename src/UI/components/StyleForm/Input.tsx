@@ -1,4 +1,6 @@
 import React from "react";
+import classes from "../../containers/Form/Form.module.scss";
+
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
 import { dispatchGeneric } from "typings";
 import { capitalize } from "const";
@@ -16,7 +18,7 @@ export const Input: React.FC<InputComponentProps> = ({
 	modifyStyle,
 	dispatch,
 }: InputComponentProps) => (
-	<div>
+	<div className={classes.input}>
 		<label htmlFor={id}>{capitalize(type)}</label>
 		<input
 			id={id}

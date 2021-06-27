@@ -1,4 +1,5 @@
 import React from "react";
+import classes from "../../containers/Form/Form.module.scss";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
 import { dispatchGeneric } from "typings";
 import { capitalize } from "const";
@@ -22,20 +23,23 @@ export const Slider: React.FC<SliderComponentProps> = ({
 	modifyStyle,
 	dispatch,
 }: SliderComponentProps) => (
-	<div>
+	<div className={classes.slider}>
 		<label htmlFor={id}>{capitalize(id)}</label>
-		<input
-			id={id}
-			type="range"
-			value={value}
-			step={step}
-			min={min}
-			max={max}
-			onChange={(e) => {
-				e.preventDefault();
-				dispatch(modifyStyle(e.target.value));
-			}}
-		/>
-		<div>{value}</div>
+		<div>
+			{" "}
+			<input
+				id={id}
+				type="range"
+				value={value}
+				step={step}
+				min={min}
+				max={max}
+				onChange={(e) => {
+					e.preventDefault();
+					dispatch(modifyStyle(e.target.value));
+				}}
+			/>
+			<p className={classes.value}>{value}</p>
+		</div>
 	</div>
 );
