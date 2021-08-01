@@ -43,17 +43,17 @@ export const BorderControls: React.FC = () => {
 				case "radiusTR":
 					return (
 						mode === "separate" &&
-						placeSlider("Top right", radiusTR, 1, 0, 100, func, dispatch)
+						placeSlider("Top right", radiusTR, 1, 0, 250, func, dispatch)
 					);
 				case "radiusBR":
 					return (
 						mode === "separate" &&
-						placeSlider("Bottom right", radiusBR, 1, 0, 100, func, dispatch)
+						placeSlider("Bottom right", radiusBR, 1, 0, 250, func, dispatch)
 					);
 				case "radiusBL":
 					return (
 						mode === "separate" &&
-						placeSlider("Bottom left", radiusBL, 1, 0, 100, func, dispatch)
+						placeSlider("Bottom left", radiusBL, 1, 0, 250, func, dispatch)
 					);
 				case "radius":
 					return (
