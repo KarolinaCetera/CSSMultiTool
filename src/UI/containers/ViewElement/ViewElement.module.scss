@@ -1,9 +1,16 @@
 .viewElement {
   height: 80%;
   width: 45%;
+  padding: 40px;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 2;
+  color: #3a3d45;
+}
+
+.styleAndSample {
+  flex-direction: column;
+  justify-content: space-around;
 }

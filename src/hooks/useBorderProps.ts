@@ -1,26 +1,44 @@
 import { useSelector } from "react-redux";
-import { BorderStyles, hooksReturnType } from "typings";
+import { BorderProps, BorderStyles, hooksReturnType } from "typings";
 
-export const useBorderWidth = (): hooksReturnType =>
+const useBorderWidth = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderWidth.width);
 
-export const useBorderColor = (): hooksReturnType =>
+const useBorderColor = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderColor.color);
 
-export const useBorderRadius = (): hooksReturnType =>
+const useBorderRadius = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderRadius.radius);
 
-export const useBorderRadiusTL = (): hooksReturnType =>
+const useBorderRadiusTL = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderRadiusTL.radiusTL);
 
-export const useBorderRadiusTR = (): hooksReturnType =>
+const useBorderRadiusTR = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderRadiusTR.radiusTR);
 
-export const useBorderRadiusBR = (): hooksReturnType =>
+const useBorderRadiusBR = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderRadiusBR.radiusBR);
 
-export const useBorderRadiusBL = (): hooksReturnType =>
+const useBorderRadiusBL = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderRadiusBL.radiusBL);
 
-export const useBorderType = (): hooksReturnType =>
+const useBorderType = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderType.type);
+
+export const useBorderPropsAll = (): BorderProps => {
+	return {
+		width: useBorderWidth(),
+		color: useBorderColor(),
+		radius: useBorderRadius(),
+		type: useBorderType(),
+	};
+};
+
+export const userBorderRadiusCorner = (): BorderProps => {
+	return {
+		TL: useBorderRadiusTL(),
+		TR: useBorderRadiusTR(),
+		BR: useBorderRadiusBR(),
+		BL: useBorderRadiusBL(),
+	};
+};

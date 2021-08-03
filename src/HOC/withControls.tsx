@@ -1,5 +1,6 @@
 import React from "react";
 import { ViewElement, ViewBox } from "UI";
+import StyleText from "../UI/components/StyleText";
 
 export const withControls: (
 	ControlsComponent: React.FC,
@@ -9,8 +10,9 @@ export const withControls: (
 		<ViewElement>
 			<ControlsComponent />
 		</ViewElement>
-		<ViewElement>
+		<ViewElement elementClass={true}>
 			<ExampleComponent />
+			<StyleText />
 		</ViewElement>
 	</ViewBox>
 );
