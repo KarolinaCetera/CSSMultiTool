@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { BorderProps, BorderStyles, hooksReturnType } from "typings";
+import { BorderStyles, ControlProps, hooksReturnType } from "typings";
 
 const useBorderWidth = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderWidth.width);
@@ -25,7 +25,7 @@ const useBorderRadiusBL = (): hooksReturnType =>
 const useBorderType = (): hooksReturnType =>
 	useSelector((state: BorderStyles) => state.border.borderType.type);
 
-export const useBorderPropsAll = (): BorderProps => {
+export const useBorderPropsAll = (): ControlProps => {
 	return {
 		width: useBorderWidth(),
 		color: useBorderColor(),
@@ -34,7 +34,7 @@ export const useBorderPropsAll = (): BorderProps => {
 	};
 };
 
-export const userBorderRadiusCorner = (): BorderProps => {
+export const userBorderRadiusCorner = (): ControlProps => {
 	return {
 		TL: useBorderRadiusTL(),
 		TR: useBorderRadiusTR(),

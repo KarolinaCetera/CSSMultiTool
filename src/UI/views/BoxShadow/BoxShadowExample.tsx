@@ -1,24 +1,14 @@
 import React from "react";
 import { Example } from "UI";
-import {
-	useBoxShadowBlur,
-	useBoxShadowSpread,
-	useBoxShadowVertical,
-	useBoxShadowColor,
-	useBoxShadowHorizontal,
-	useBoxShadowOpacity,
-} from "hooks";
+import { useBoxShadowProps } from "hooks";
+import { rgbColor } from "typings";
 
 export const BoxShadowExample: React.FC = () => {
-	const blur = useBoxShadowBlur();
-	const color = useBoxShadowColor();
-	const horizontal = useBoxShadowHorizontal();
-	const opacity = useBoxShadowOpacity();
-	const spread = useBoxShadowSpread();
-	const vertical = useBoxShadowVertical();
+	const boxShadowStyles = useBoxShadowProps();
+	const color = boxShadowStyles.color as rgbColor;
 
 	const boxShadowStyle = {
-		boxShadow: `${horizontal}px ${vertical}px ${blur}px ${spread}px rgba(${color.r},${color.g},${color.b},${opacity})`,
+		boxShadow: `${boxShadowStyles.horizontal}px ${boxShadowStyles.vertical}px ${boxShadowStyles.blur}px ${boxShadowStyles.spread}px rgba(${color.r},${color.g},${color.b},${boxShadowStyles.opacity})`,
 	};
 
 	return <Example style={boxShadowStyle} />;

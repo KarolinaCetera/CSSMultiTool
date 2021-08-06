@@ -129,11 +129,8 @@ type rgbColor =
 	| { r: number; g: number; b: number }
 	| { r: string; g: string; b: string };
 
-type hooksReturnType = string | number | dropShadowTypes;
+type hooksReturnType = string | number | dropShadowTypes | rgbColor;
 
-interface BorderProps {
-	[key: string]: hooksReturnType;
-	[key: string]: hooksReturnType;
-	[key: string]: hooksReturnType;
+interface ControlProps {
 	[key: string]: hooksReturnType;
 }
