@@ -1,77 +1,28 @@
-import {
-	fontProps,
-	fontStyleOptions as styleType,
-	fontWeightOptions as weightType,
-	textTransformOptions as transformType,
-} from "const";
-import { Input, Select, Slider } from "../../../containers";
-import { useFontProps } from "hooks";
+import { ProperForm } from "typings";
+import { fontProps } from "const";
+import { useFontsForms } from "hooks";
 
-export const placeProperForm = (): (
-	| JSX.Element
-	| false
-	| undefined
-	| null
-)[] => {
-	const fontStyles = useFontProps();
+export const placeProperForm = (): ProperForm => {
 	return fontProps.map(({ id, modifyStyle }) => {
+		const fontForms = useFontsForms({ id, modifyStyle });
+
 		switch (id) {
 			case "color":
-				return Input({ id, type: "color", modifyStyle });
+				return fontForms.colorForm;
 			case "size":
-				return Slider({
-					id,
-					value: fontStyles.fontSize,
-					step: 1,
-					min: 0,
-					max: 300,
-					modifyStyle,
-				});
+				return fontForms.fontSizeForm;
 			case "style":
-				return Select({
-					id,
-					type: styleType,
-					modifyStyle,
-				});
+				return fontForms.fontStyleForm;
 			case "weight":
-				return Select({
-					id,
-					type: weightType,
-					modifyStyle,
-				});
+				return fontForms.fontWeightForm;
 			case "letterSpacing":
-				return Slider({
-					id,
-					value: fontStyles.letterSpacing,
-					step: 1,
-					min: 0,
-					max: 300,
-					modifyStyle,
-				});
+				return fontForms.letterSpacingForm;
 			case "lineHeight":
-				return Slider({
-					id,
-					value: fontStyles.lineHeight,
-					step: 0.1,
-					min: 0,
-					max: 50,
-					modifyStyle,
-				});
+				return fontForms.lineHeightForm;
 			case "textTransform":
-				return Select({
-					id,
-					type: transformType,
-					modifyStyle,
-				});
+				return fontForms.textTransformForm;
 			case "wordSpacing":
-				return Slider({
-					id,
-					value: fontStyles.wordSpacing,
-					step: 1,
-					min: 0,
-					max: 300,
-					modifyStyle,
-				});
+				return fontForms.wordSpacingForm;
 		}
 	});
 };

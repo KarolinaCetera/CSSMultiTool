@@ -1,8 +1,9 @@
-import { Input, Select, Slider } from "../UI";
-import { borderTypeOptions as type } from "../const";
+import { Input, Select, Slider } from "UI";
+import { borderTypeOptions } from "const";
 import { useBorderPropsAll, userBorderRadiusCorner } from "./useBorderProps";
+import { FormHook, FormHookProps } from "../typings";
 
-const useBorderTypeForm = ({ id, modifyStyle }) =>
+const useBorderTypeForm = ({ id, type, modifyStyle }) =>
 	Select({
 		id,
 		type,
@@ -22,7 +23,7 @@ const useBorderWidthForm = ({ id, borderStyles, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusTLForm = ({ borderRadius, modifyStyle }) =>
+const useBorderRadiusTLForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 	Slider({
 		id: "Top left",
 		value: borderRadius.TL,
@@ -32,7 +33,7 @@ const useBorderRadiusTLForm = ({ borderRadius, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusTRForm = ({ borderRadius, modifyStyle }) =>
+const useBorderRadiusTRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 	Slider({
 		id: "Top left",
 		value: borderRadius.TL,
@@ -42,7 +43,7 @@ const useBorderRadiusTRForm = ({ borderRadius, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusBRForm = ({ borderRadius, modifyStyle }) =>
+const useBorderRadiusBRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 	Slider({
 		id: "Top left",
 		value: borderRadius.TL,
@@ -72,18 +73,21 @@ const useBorderRadiusForm = ({ id, borderStyles, modifyStyle }) =>
 		modifyStyle,
 	});
 
-export const useBorderForms = ({ id, modifyStyle }) => {
+export const useBorderForms = ({
+	id,
+	modifyStyle,
+}: FormHookProps): FormHook => {
 	const borderStyles = useBorderPropsAll();
 	const borderRadius = userBorderRadiusCorner();
 
 	return {
-		borderTypeForm: useBorderTypeForm({ id, modifyStyle }),
-		borderColorForm: useBorderColorForm({ id, modifyStyle }),
-		borderWidthForm: useBorderWidthForm({ id, borderStyles, modifyStyle }),
-		borderRadiusTLForm: useBorderRadiusTLForm({ borderRadius, modifyStyle }),
-		borderRadiusTRForm: useBorderRadiusTRForm({ borderRadius, modifyStyle }),
-		borderRadiusBRForm: useBorderRadiusBRForm({ borderRadius, modifyStyle }),
-		borderRadiusBLForm: useBorderRadiusBLForm({ borderRadius, modifyStyle }),
-		borderRadiusForm: useBorderRadiusForm({ id, borderStyles, modifyStyle }),
+		typeForm: useBorderTypeForm({ id, type: borderTypeOptions, modifyStyle }),
+		colorForm: useBorderColorForm({ id, modifyStyle }),
+		widthForm: useBorderWidthForm({ id, borderStyles, modifyStyle }),
+		radiusTLForm: useBorderRadiusTLForm({ borderRadius, modifyStyle }),
+		radiusTRForm: useBorderRadiusTRForm({ borderRadius, modifyStyle }),
+		radiusBRForm: useBorderRadiusBRForm({ borderRadius, modifyStyle }),
+		radiusBLForm: useBorderRadiusBLForm({ borderRadius, modifyStyle }),
+		radiusForm: useBorderRadiusForm({ id, borderStyles, modifyStyle }),
 	};
 };

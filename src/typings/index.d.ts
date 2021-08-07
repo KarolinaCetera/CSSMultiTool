@@ -138,3 +138,13 @@ interface ControlProps {
 }
 
 type ProperForm = (JSX.Element | false | undefined | null)[];
+
+interface FormHookProps {
+	id?: string | undefined;
+	modifyStyle: ActionCreatorWithPayload<any, string>;
+	[key: string];
+}
+
+interface FormHook {
+	[key: string]: React.ReactElement<any, any> | null;
+}

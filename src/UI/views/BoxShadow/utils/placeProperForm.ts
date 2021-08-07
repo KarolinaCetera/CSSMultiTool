@@ -1,64 +1,24 @@
 import { boxShadowProps } from "const";
-import { useBoxShadowProps } from "hooks";
-import { Input, Slider } from "../../../containers";
+import { useBoxShadowForms } from "hooks";
+import { ProperForm } from "typings";
 
-export const placeProperForm = (): (
-	| JSX.Element
-	| false
-	| undefined
-	| null
-)[] => {
-	const boxShadowStyles = useBoxShadowProps();
-
+export const placeProperForm = (): ProperForm => {
 	return boxShadowProps.map(({ id, modifyStyle }) => {
+		const boxShadowForms = useBoxShadowForms({ id, modifyStyle });
+
 		switch (id) {
 			case "blur":
-				return Slider({
-					id,
-					value: boxShadowStyles.blur,
-					step: 1,
-					min: 0,
-					max: 300,
-					modifyStyle,
-				});
+				return boxShadowForms.blurForm;
 			case "color":
-				return Input({ id, type: "color", modifyStyle });
+				return boxShadowForms.colorForm;
 			case "horizontal":
-				return Slider({
-					id,
-					value: boxShadowStyles.horizontal,
-					step: 1,
-					min: -200,
-					max: 200,
-					modifyStyle,
-				});
+				return boxShadowForms.horizontalForm;
 			case "opacity":
-				return Slider({
-					id,
-					value: boxShadowStyles.opacity,
-					step: 0.1,
-					min: 0,
-					max: 1,
-					modifyStyle,
-				});
+				return boxShadowForms.opacityForm;
 			case "spread":
-				return Slider({
-					id,
-					value: boxShadowStyles.spread,
-					step: 1,
-					min: -200,
-					max: 200,
-					modifyStyle,
-				});
+				return boxShadowForms.spreadForm;
 			case "vertical":
-				return Slider({
-					id,
-					value: boxShadowStyles.vertical,
-					step: 1,
-					min: -200,
-					max: 200,
-					modifyStyle,
-				});
+				return boxShadowForms.verticalForm;
 		}
 	});
 };

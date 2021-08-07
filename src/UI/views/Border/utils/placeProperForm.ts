@@ -10,21 +10,21 @@ export const placeProperForm = (): ProperForm => {
 
 		switch (id) {
 			case "type":
-				return borderForms.borderTypeForm;
+				return borderForms.typeForm;
 			case "color":
-				return borderForms.borderColorForm;
+				return borderForms.colorForm;
 			case "width":
-				return borderForms.borderWidthForm;
+				return borderForms.widthForm;
 			case "radiusTL":
-				return mode === "separate" && borderForms.borderRadiusTLForm;
+				return mode === "separate" && borderForms.radiusTLForm;
 			case "radiusTR":
-				return mode === "separate" && borderForms.borderRadiusTRForm;
+				return mode === "separate" && borderForms.radiusTRForm;
 			case "radiusBR":
-				return mode === "separate" && borderForms.borderRadiusBRForm;
+				return mode === "separate" && borderForms.radiusBRForm;
 			case "radiusBL":
-				return mode === "separate" && borderForms.borderRadiusBLForm;
+				return mode === "separate" && borderForms.radiusBLForm;
 			case "radius":
-				return mode === "all" && borderForms.borderRadiusForm;
+				return mode === "all" && borderForms.radiusForm;
 		}
 	});
 };
