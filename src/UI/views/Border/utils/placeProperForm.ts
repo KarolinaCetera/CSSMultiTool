@@ -1,70 +1,106 @@
 import { borderProps } from "const";
-import { placeInput, placeSelect, placeSlider } from "utils";
+import { Input, Select, Slider } from "../../../components";
 import {
 	useBorderPropsAll,
 	useRadiusMode,
 	userBorderRadiusCorner,
 } from "hooks";
-import { borderTypeOptions } from "const";
+import { borderTypeOptions as type } from "const";
 import { Dispatch } from "react";
 
 export const placeProperForm = (
 	dispatch: Dispatch<any>,
-): (JSX.Element | false | undefined)[] => {
+): (JSX.Element | false | undefined | null)[] => {
 	const borderStyles = useBorderPropsAll();
 	const borderRadius = userBorderRadiusCorner();
 
 	const { mode } = useRadiusMode();
 
-	/** Argumenty place powinny być obiektami */
-	return borderProps.map(({ value, func }) => {
-		switch (value) {
+	return borderProps.map(({ id, modifyStyle }) => {
+		switch (id) {
 			case "type":
-				return placeSelect(value, borderTypeOptions, func, dispatch);
-			case "color":
-				return placeInput(value, "color", func, dispatch);
-			case "width":
-				return placeSlider(
-					value,
-					borderStyles.width,
-					1,
-					0,
-					100,
-					func,
+				return Select({
+					id,
+					type,
+					modifyStyle,
 					dispatch,
-				);
+				});
+			case "color":
+				return Input({ id, type: "color", modifyStyle, dispatch });
+			case "width":
+				return Slider({
+					id,
+					value: borderStyles.width,
+					step: 1,
+					min: 0,
+					max: 100,
+					modifyStyle,
+					dispatch,
+				});
 			case "radiusTL":
 				return (
 					mode === "separate" &&
-					placeSlider("Top left", borderRadius.TL, 1, 0, 100, func, dispatch)
+					Slider({
+						id: "Top left",
+						value: borderRadius.TL,
+						step: 1,
+						min: 0,
+						max: 100,
+						modifyStyle,
+						dispatch,
+					})
 				);
 			case "radiusTR":
 				return (
 					mode === "separate" &&
-					placeSlider("Top right", borderRadius.TR, 1, 0, 250, func, dispatch)
+					Slider({
+						id: "Top right",
+						value: borderRadius.TR,
+						step: 1,
+						min: 0,
+						max: 250,
+						modifyStyle,
+						dispatch,
+					})
 				);
 			case "radiusBR":
 				return (
 					mode === "separate" &&
-					placeSlider(
-						"Bottom right",
-						borderRadius.BR,
-						1,
-						0,
-						250,
-						func,
+					Slider({
+						id: "Bottom right",
+						value: borderRadius.BR,
+						step: 1,
+						min: 0,
+						max: 250,
+						modifyStyle,
 						dispatch,
-					)
+					})
 				);
 			case "radiusBL":
 				return (
 					mode === "separate" &&
-					placeSlider("Bottom left", borderRadius.BL, 1, 0, 250, func, dispatch)
+					Slider({
+						id: "Bottom left",
+						value: borderRadius.BL,
+						step: 1,
+						min: 0,
+						max: 250,
+						modifyStyle,
+						dispatch,
+					})
 				);
 			case "radius":
 				return (
 					mode === "all" &&
-					placeSlider(value, borderStyles.radius, 1, 0, 150, func, dispatch)
+					Slider({
+						id,
+						value: borderStyles.radius,
+						step: 1,
+						min: 0,
+						max: 150,
+						modifyStyle,
+						dispatch,
+					})
 				);
 		}
 	});

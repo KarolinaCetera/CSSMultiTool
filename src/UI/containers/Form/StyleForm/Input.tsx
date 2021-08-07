@@ -1,15 +1,14 @@
-import React from "react";
-import classes from "../../containers/Form/Form.module.scss";
+import React, { Dispatch } from "react";
+import classes from "../Form.module.scss";
 
-import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
-import { dispatchGeneric } from "typings";
+import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { capitalize } from "const";
 
 interface InputComponentProps {
 	id: string;
 	type: string;
 	modifyStyle: ActionCreatorWithPayload<any>;
-	dispatch: Dispatch<dispatchGeneric>;
+	dispatch: Dispatch<any>;
 }
 
 export const Input: React.FC<InputComponentProps> = ({

@@ -1,17 +1,17 @@
 import React from "react";
-import classes from "../../containers/Form/Form.module.scss";
+import classes from "../Form.module.scss";
 import { ActionCreatorWithPayload, Dispatch } from "@reduxjs/toolkit";
-import { dispatchGeneric } from "typings";
+import { dispatchGeneric, hooksReturnType } from "typings";
 import { capitalize } from "const";
 
 interface SliderComponentProps {
 	id: string;
-	value: number;
+	value;
 	step: number;
 	min: number;
 	max: number;
 	modifyStyle: ActionCreatorWithPayload<any>;
-	dispatch: Dispatch<dispatchGeneric>;
+	dispatch;
 }
 
 export const Slider: React.FC<SliderComponentProps> = ({

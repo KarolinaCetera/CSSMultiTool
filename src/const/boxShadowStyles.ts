@@ -9,10 +9,10 @@ import {
 import { CSSPropsTypes } from "typings";
 
 export const boxShadowProps: CSSPropsTypes[] = [
-	{ value: "blur", func: setBoxShadowBlur },
-	{ value: "color", func: setBoxShadowColor },
-	{ value: "horizontal", func: setBoxShadowHorizontal },
-	{ value: "opacity", func: setBoxShadowOpacity },
-	{ value: "spread", func: setBoxShadowSpread },
-	{ value: "vertical", func: setBoxShadowVertical },
+	{ id: "blur", modifyStyle: setBoxShadowBlur },
+	{ id: "color", modifyStyle: setBoxShadowColor },
+	{ id: "horizontal", modifyStyle: setBoxShadowHorizontal },
+	{ id: "opacity", modifyStyle: setBoxShadowOpacity },
+	{ id: "spread", modifyStyle: setBoxShadowSpread },
+	{ id: "vertical", modifyStyle: setBoxShadowVertical },
 ];

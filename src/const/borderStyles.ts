@@ -24,12 +24,12 @@ export const borderTypeOptions: styleOption[] = [
 ];
 
 export const borderProps: CSSPropsTypes[] = [
-	{ value: "width", func: setBorderWidth },
-	{ value: "type", func: setBorderType },
-	{ value: "color", func: setBorderColor },
-	{ value: "radius", func: setBorderRadius },
-	{ value: "radiusTL", func: setBorderRadiusTL },
-	{ value: "radiusTR", func: setBorderRadiusTR },
-	{ value: "radiusBR", func: setBorderRadiusBR },
-	{ value: "radiusBL", func: setBorderRadiusBL },
+	{ id: "width", modifyStyle: setBorderWidth },
+	{ id: "type", modifyStyle: setBorderType },
+	{ id: "color", modifyStyle: setBorderColor },
+	{ id: "radius", modifyStyle: setBorderRadius },
+	{ id: "radiusTL", modifyStyle: setBorderRadiusTL },
+	{ id: "radiusTR", modifyStyle: setBorderRadiusTR },
+	{ id: "radiusBR", modifyStyle: setBorderRadiusBR },
+	{ id: "radiusBL", modifyStyle: setBorderRadiusBL },
 ];

@@ -1,36 +1,50 @@
 import { useSelector } from "react-redux";
-import { FilterStyles, hooksReturnType } from "../typings";
+import { ControlProps, FilterStyles, hooksReturnType } from "../typings";
 
-export const useFilterBlur = (): hooksReturnType =>
+const useFilterBlur = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterBlur.blur);
 
-export const useFilterBrightness = (): hooksReturnType =>
+const useFilterBrightness = (): hooksReturnType =>
 	useSelector(
 		(state: FilterStyles) => state.filter.filterBrightness.brightness,
 	);
 
-export const useFilterContrast = (): hooksReturnType =>
+const useFilterContrast = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterContrast.contrast);
 
-export const useFilterDropShadow = (): hooksReturnType =>
+const useFilterDropShadow = (): hooksReturnType =>
 	useSelector(
 		(state: FilterStyles) => state.filter.filterDropShadow.dropShadow,
 	);
 
-export const useFilterGreyScale = (): hooksReturnType =>
+const useFilterGreyScale = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterGreyScale.greyScale);
 
-export const useFilterHueRotate = (): hooksReturnType =>
+const useFilterHueRotate = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterHueRotate.hueRotate);
 
-export const useFilterInvert = (): hooksReturnType =>
+const useFilterInvert = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterInvert.invert);
 
-export const useFilterOpacity = (): hooksReturnType =>
+const useFilterOpacity = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterOpacity.opacity);
 
-export const useFilterSaturate = (): hooksReturnType =>
+const useFilterSaturate = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterSaturate.saturate);
 
-export const useFilterSepia = (): hooksReturnType =>
+const useFilterSepia = (): hooksReturnType =>
 	useSelector((state: FilterStyles) => state.filter.filterSepia.sepia);
+
+export const useFilterProps = (): ControlProps => {
+	return {
+		blur: useFilterBlur(),
+		contrast: useFilterContrast(),
+		dropShadow: useFilterDropShadow(),
+		greyScale: useFilterGreyScale(),
+		hueRotate: useFilterHueRotate(),
+		invert: useFilterInvert(),
+		opacity: useFilterOpacity(),
+		saturate: useFilterSaturate(),
+		sepia: useFilterSepia(),
+	};
+};

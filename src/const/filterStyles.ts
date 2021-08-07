@@ -13,21 +13,21 @@ import {
 import { CSSPropsTypes } from "typings";
 
 export const filterProps: CSSPropsTypes[] = [
-	{ value: "blur", func: setFilterBlur },
-	{ value: "brightness", func: setFilterBrightness },
-	{ value: "contrast", func: setFilterContrast },
-	{ value: "dropShadow", func: setFilterDropShadow },
-	{ value: "greyScale", func: setFilterGreyScale },
-	{ value: "hue", func: setFilterHue },
-	{ value: "invert", func: setFilterInvert },
-	{ value: "opacity", func: setFilterOpacity },
-	{ value: "saturate", func: setFilterSaturate },
-	{ value: "sepia", func: setFilterSepia },
+	{ id: "blur", modifyStyle: setFilterBlur },
+	{ id: "brightness", modifyStyle: setFilterBrightness },
+	{ id: "contrast", modifyStyle: setFilterContrast },
+	{ id: "dropShadow", modifyStyle: setFilterDropShadow },
+	{ id: "greyScale", modifyStyle: setFilterGreyScale },
+	{ id: "hue", modifyStyle: setFilterHue },
+	{ id: "invert", modifyStyle: setFilterInvert },
+	{ id: "opacity", modifyStyle: setFilterOpacity },
+	{ id: "saturate", modifyStyle: setFilterSaturate },
+	{ id: "sepia", modifyStyle: setFilterSepia },
 ];
 
 export const dropShadowProps = [
-	{ value: "drop shadow offsetX", type: "number" },
-	{ value: "drop shadow offsetY", type: "number" },
-	{ value: "drop shadow blurRadius", type: "number" },
-	{ value: "drops shadow color", type: "color" },
+	{ id: "drop shadow offsetX", type: "number" },
+	{ id: "drop shadow offsetY", type: "number" },
+	{ id: "drop shadow blurRadius", type: "number" },
+	{ id: "drops shadow color", type: "color" },
 ];

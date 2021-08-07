@@ -8,9 +8,9 @@ import {
 import { CSSPropsTypes } from "typings";
 
 export const textShadowProps: CSSPropsTypes[] = [
-	{ value: "blur", func: setTextShadowBlur },
-	{ value: "color", func: setTextShadowColor },
-	{ value: "horizontal", func: setTextShadowHorizontal },
-	{ value: "opacity", func: setTextShadowOpacity },
-	{ value: "vertical", func: setTextShadowVertical },
+	{ id: "blur", modifyStyle: setTextShadowBlur },
+	{ id: "color", modifyStyle: setTextShadowColor },
+	{ id: "horizontal", modifyStyle: setTextShadowHorizontal },
+	{ id: "opacity", modifyStyle: setTextShadowOpacity },
+	{ id: "vertical", modifyStyle: setTextShadowVertical },
 ];

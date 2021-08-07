@@ -28,8 +28,8 @@ interface DrawerProps extends MenuElements {
 }
 
 interface CSSPropsTypes {
-	value: string;
-	func: ActionCreatorWithPayload<string>;
+	id: string;
+	modifyStyle: ActionCreatorWithPayload<string>;
 }
 
 interface BorderStyles extends DefaultRootState {

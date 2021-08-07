@@ -7,7 +7,7 @@ import {
 	useTextShadowVertical,
 } from "hooks";
 import { textShadowProps } from "const";
-import { placeInput, placeSlider } from "utils";
+import { Input, Slider } from "../../components";
 
 export const TextShadowControls: React.FC = () => {
 	const dispatch = useDispatch();
@@ -18,18 +18,50 @@ export const TextShadowControls: React.FC = () => {
 	const vertical = useTextShadowVertical();
 
 	const placeProperForm = () =>
-		textShadowProps.map(({ value, func }) => {
-			switch (value) {
+		textShadowProps.map(({ id, modifyStyle }) => {
+			switch (id) {
 				case "blur":
-					return placeSlider(value, blur, 1, 0, 300, func, dispatch);
+					return Slider({
+						id,
+						value: blur,
+						step: 1,
+						min: 0,
+						max: 300,
+						modifyStyle,
+						dispatch,
+					});
 				case "color":
-					return placeInput(value, "color", func, dispatch);
+					return Input({ id, type: "color", modifyStyle, dispatch });
 				case "horizontal":
-					return placeSlider(value, horizontal, 1, -200, 200, func, dispatch);
+					return Slider({
+						id,
+						value: horizontal,
+						step: 1,
+						min: -200,
+						max: 200,
+						modifyStyle,
+						dispatch,
+					});
 				case "opacity":
-					return placeSlider(value, opacity, 0.1, 0, 1, func, dispatch);
+					return Slider({
+						id,
+						value: opacity,
+						step: 0.1,
+						min: 0,
+						max: 1,
+						modifyStyle,
+						dispatch,
+					});
 				case "vertical":
-					return placeSlider(value, vertical, 1, -200, 200, func, dispatch);
+					return Slider({
+						id,
+						value: vertical,
+						step: 1,
+						min: -200,
+						max: 200,
+						modifyStyle,
+						dispatch,
+					});
 			}
 		});
 

@@ -1,29 +1,37 @@
 import { useSelector } from "react-redux";
-import { FontStyles, hooksReturnType } from "typings";
+import { ControlProps, FontStyles, hooksReturnType } from "typings";
 
-export const useFontColor = (): hooksReturnType =>
+const useFontColor = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontColor.color);
 
-export const useFontSize = (): hooksReturnType =>
+const useFontSize = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontSize.fontSize);
 
-export const useFontStyle = (): hooksReturnType =>
+const useFontStyle = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontStyle.fontStyle);
 
-export const useFontWeight = (): hooksReturnType =>
+const useFontWeight = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontWeight.fontWeight);
 
-export const useLetterSpacing = (): hooksReturnType =>
+const useLetterSpacing = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.letterSpacing.letterSpacing);
 
-export const useLineHeight = (): hooksReturnType =>
+const useLineHeight = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.lineHeight.lineHeight);
 
-export const useTextDecoration = (): hooksReturnType =>
-	useSelector((state: FontStyles) => state.fonts.textDecoration.textDecoration);
-
-export const useTextTransform = (): hooksReturnType =>
+const useTextTransform = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.textTransform.textTransform);
 
-export const useWordSpacing = (): hooksReturnType =>
+const useWordSpacing = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.wordSpacing.wordSpacing);
+
+export const useFontProps = (): ControlProps => ({
+	color: useFontColor(),
+	fontSize: useFontSize(),
+	style: useFontStyle(),
+	weight: useFontWeight(),
+	letterSpacing: useLetterSpacing(),
+	lineHeight: useLineHeight(),
+	textTransform: useTextTransform(),
+	wordSpacing: useWordSpacing(),
+});
