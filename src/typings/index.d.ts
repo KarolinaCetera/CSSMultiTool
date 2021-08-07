@@ -1,7 +1,7 @@
 import "./styleProperties";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { DefaultRootState } from "react-redux";
-import { CSSProperties } from "react";
+import { Dispatch } from "react";
 
 interface ToggleDrawer {
 	toggleDrawer: (visibility: boolean) => void;
@@ -125,6 +125,8 @@ type dispatchGeneric = {
 	type: string;
 };
 
+type CustomDispatch = Dispatch<dispatchGeneric>;
+
 type rgbColor =
 	| { r: number; g: number; b: number }
 	| { r: string; g: string; b: string };
@@ -134,3 +136,5 @@ type hooksReturnType = string | number | dropShadowTypes | rgbColor;
 interface ControlProps {
 	[key: string]: hooksReturnType;
 }
+
+type ProperForm = (JSX.Element | false | undefined | null)[];

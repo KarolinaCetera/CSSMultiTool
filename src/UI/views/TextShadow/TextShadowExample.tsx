@@ -1,22 +1,14 @@
 import React from "react";
 import { Example } from "UI";
-import {
-	useTextShadowBlur,
-	useTextShadowColor,
-	useTextShadowHorizontal,
-	useTextShadowOpacity,
-	useTextShadowVertical,
-} from "hooks";
+import { useTextShadowProps } from "hooks";
+import { rgbColor } from "typings";
 
 export const TextShadowExample: React.FC = () => {
-	const blur = useTextShadowBlur();
-	const color = useTextShadowColor();
-	const horizontal = useTextShadowHorizontal();
-	const opacity = useTextShadowOpacity();
-	const vertical = useTextShadowVertical();
+	const textShadowStyles = useTextShadowProps();
+	const color = textShadowStyles.color as rgbColor;
 
 	const textShadowStyle = {
-		textShadow: `${horizontal}px ${vertical}px ${blur}px rgba(${color.r},${color.g},${color.b},${opacity})`,
+		textShadow: `${textShadowStyles.horizontal}px ${textShadowStyles.vertical}px ${textShadowStyles.blur}px rgba(${color.r},${color.g},${color.b},${textShadowStyles.opacity})`,
 	};
 
 	return (

@@ -2,7 +2,6 @@ import { combineReducers } from "@reduxjs/toolkit";
 import {
 	borderReducers,
 	boxShadowReducers,
-	filterReducers,
 	fontsReducers,
 	globalReducers,
 	textShadowReducers,
@@ -13,7 +12,6 @@ export const createReducer = (injectedReducers: Record<string, unknown> = {}) =>
 		border: borderReducers,
 		boxShadow: boxShadowReducers,
 		fonts: fontsReducers,
-		filter: filterReducers,
 		global: globalReducers,
 		textShadow: textShadowReducers,
 		...injectedReducers,

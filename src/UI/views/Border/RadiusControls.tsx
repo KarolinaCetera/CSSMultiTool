@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./BorderControls.module.scss";
 import { useRadiusMode } from "hooks";
 
-const RadiusControls = () => {
+const RadiusControls: React.FC = () => {
 	const { mode, toggleMode } = useRadiusMode();
 
 	return (

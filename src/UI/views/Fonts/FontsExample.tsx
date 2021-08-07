@@ -2,7 +2,7 @@ import React, { CSSProperties } from "react";
 import { useFontProps } from "hooks";
 import { Example } from "../../components";
 
-export const FontsExample = () => {
+export const FontsExample: React.FC = () => {
 	const fontStyles = useFontProps();
 
 	const fontStyle = {

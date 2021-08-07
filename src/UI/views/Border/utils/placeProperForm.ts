@@ -1,107 +1,30 @@
 import { borderProps } from "const";
-import { Input, Select, Slider } from "../../../components";
-import {
-	useBorderPropsAll,
-	useRadiusMode,
-	userBorderRadiusCorner,
-} from "hooks";
-import { borderTypeOptions as type } from "const";
-import { Dispatch } from "react";
+import { useRadiusMode, useBorderForms } from "hooks";
+import { ProperForm } from "typings";
 
-export const placeProperForm = (
-	dispatch: Dispatch<any>,
-): (JSX.Element | false | undefined | null)[] => {
-	const borderStyles = useBorderPropsAll();
-	const borderRadius = userBorderRadiusCorner();
-
+export const placeProperForm = (): ProperForm => {
 	const { mode } = useRadiusMode();
 
 	return borderProps.map(({ id, modifyStyle }) => {
+		const borderForms = useBorderForms({ id, modifyStyle });
+
 		switch (id) {
 			case "type":
-				return Select({
-					id,
-					type,
-					modifyStyle,
-					dispatch,
-				});
+				return borderForms.borderTypeForm;
 			case "color":
-				return Input({ id, type: "color", modifyStyle, dispatch });
+				return borderForms.borderColorForm;
 			case "width":
-				return Slider({
-					id,
-					value: borderStyles.width,
-					step: 1,
-					min: 0,
-					max: 100,
-					modifyStyle,
-					dispatch,
-				});
+				return borderForms.borderWidthForm;
 			case "radiusTL":
-				return (
-					mode === "separate" &&
-					Slider({
-						id: "Top left",
-						value: borderRadius.TL,
-						step: 1,
-						min: 0,
-						max: 100,
-						modifyStyle,
-						dispatch,
-					})
-				);
+				return mode === "separate" && borderForms.borderRadiusTLForm;
 			case "radiusTR":
-				return (
-					mode === "separate" &&
-					Slider({
-						id: "Top right",
-						value: borderRadius.TR,
-						step: 1,
-						min: 0,
-						max: 250,
-						modifyStyle,
-						dispatch,
-					})
-				);
+				return mode === "separate" && borderForms.borderRadiusTRForm;
 			case "radiusBR":
-				return (
-					mode === "separate" &&
-					Slider({
-						id: "Bottom right",
-						value: borderRadius.BR,
-						step: 1,
-						min: 0,
-						max: 250,
-						modifyStyle,
-						dispatch,
-					})
-				);
+				return mode === "separate" && borderForms.borderRadiusBRForm;
 			case "radiusBL":
-				return (
-					mode === "separate" &&
-					Slider({
-						id: "Bottom left",
-						value: borderRadius.BL,
-						step: 1,
-						min: 0,
-						max: 250,
-						modifyStyle,
-						dispatch,
-					})
-				);
+				return mode === "separate" && borderForms.borderRadiusBLForm;
 			case "radius":
-				return (
-					mode === "all" &&
-					Slider({
-						id,
-						value: borderStyles.radius,
-						step: 1,
-						min: 0,
-						max: 150,
-						modifyStyle,
-						dispatch,
-					})
-				);
+				return mode === "all" && borderForms.borderRadiusForm;
 		}
 	});
 };

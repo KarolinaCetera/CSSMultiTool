@@ -1,6 +1,6 @@
-import { boxShadowProps } from "const";
-import { useBoxShadowProps } from "hooks";
+import { textShadowProps } from "../../../../const";
 import { Input, Slider } from "../../../containers";
+import { useTextShadowProps } from "hooks";
 
 export const placeProperForm = (): (
 	| JSX.Element
@@ -8,14 +8,14 @@ export const placeProperForm = (): (
 	| undefined
 	| null
 )[] => {
-	const boxShadowStyles = useBoxShadowProps();
+	const textShadowStyles = useTextShadowProps();
 
-	return boxShadowProps.map(({ id, modifyStyle }) => {
+	return textShadowProps.map(({ id, modifyStyle }) => {
 		switch (id) {
 			case "blur":
 				return Slider({
 					id,
-					value: boxShadowStyles.blur,
+					value: blur,
 					step: 1,
 					min: 0,
 					max: 300,
@@ -26,7 +26,7 @@ export const placeProperForm = (): (
 			case "horizontal":
 				return Slider({
 					id,
-					value: boxShadowStyles.horizontal,
+					value: textShadowStyles.horizontal,
 					step: 1,
 					min: -200,
 					max: 200,
@@ -35,25 +35,16 @@ export const placeProperForm = (): (
 			case "opacity":
 				return Slider({
 					id,
-					value: boxShadowStyles.opacity,
+					value: textShadowStyles.opacity,
 					step: 0.1,
 					min: 0,
 					max: 1,
 					modifyStyle,
 				});
-			case "spread":
-				return Slider({
-					id,
-					value: boxShadowStyles.spread,
-					step: 1,
-					min: -200,
-					max: 200,
-					modifyStyle,
-				});
 			case "vertical":
 				return Slider({
 					id,
-					value: boxShadowStyles.vertical,
+					value: textShadowStyles.vertical,
 					step: 1,
 					min: -200,
 					max: 200,

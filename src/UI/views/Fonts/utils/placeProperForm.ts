@@ -3,19 +3,21 @@ import {
 	fontStyleOptions as styleType,
 	fontWeightOptions as weightType,
 	textTransformOptions as transformType,
-} from "../../../../const";
-import { Input, Select, Slider } from "../../../containers/Form/StyleForm";
-import { useFontProps } from "../../../../hooks";
-import { Dispatch } from "react";
+} from "const";
+import { Input, Select, Slider } from "../../../containers";
+import { useFontProps } from "hooks";
 
-export const placeProperForm = (
-	dispatch: Dispatch<any>,
-): (JSX.Element | false | undefined | null)[] => {
+export const placeProperForm = (): (
+	| JSX.Element
+	| false
+	| undefined
+	| null
+)[] => {
 	const fontStyles = useFontProps();
 	return fontProps.map(({ id, modifyStyle }) => {
 		switch (id) {
 			case "color":
-				return Input({ id, type: "color", modifyStyle, dispatch });
+				return Input({ id, type: "color", modifyStyle });
 			case "size":
 				return Slider({
 					id,
@@ -24,21 +26,18 @@ export const placeProperForm = (
 					min: 0,
 					max: 300,
 					modifyStyle,
-					dispatch,
 				});
 			case "style":
 				return Select({
 					id,
 					type: styleType,
 					modifyStyle,
-					dispatch,
 				});
 			case "weight":
 				return Select({
 					id,
 					type: weightType,
 					modifyStyle,
-					dispatch,
 				});
 			case "letterSpacing":
 				return Slider({
@@ -48,7 +47,6 @@ export const placeProperForm = (
 					min: 0,
 					max: 300,
 					modifyStyle,
-					dispatch,
 				});
 			case "lineHeight":
 				return Slider({
@@ -58,14 +56,12 @@ export const placeProperForm = (
 					min: 0,
 					max: 50,
 					modifyStyle,
-					dispatch,
 				});
 			case "textTransform":
 				return Select({
 					id,
 					type: transformType,
 					modifyStyle,
-					dispatch,
 				});
 			case "wordSpacing":
 				return Slider({
@@ -75,7 +71,6 @@ export const placeProperForm = (
 					min: 0,
 					max: 300,
 					modifyStyle,
-					dispatch,
 				});
 		}
 	});

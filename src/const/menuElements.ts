@@ -25,10 +25,6 @@ const Fonts = React.lazy(() =>
 	import("../UI/views/Fonts").then(({ Fonts }) => ({ default: Fonts })),
 );
 
-const Filter = React.lazy(() =>
-	import("../UI/views/Filter").then(({ Filter }) => ({ default: Filter })),
-);
-
 const About = React.lazy(() =>
 	import("../UI/views/About").then(({ About }) => ({ default: About })),
 );
@@ -38,7 +34,6 @@ export const menuElements: menuElement[] = [
 	{ name: "Border", path: "/border", component: Border },
 	{ name: "BoxShadow", path: "/boxShadow", component: BoxShadow },
 	{ name: "Fonts", path: "/fonts", component: Fonts },
-	{ name: "Filter", path: "/filter", component: Filter },
 	{ name: "Text-shadow", path: "/textShadow", component: TextShadow },
 	{ name: "About", path: "/about", component: About },
 ];
