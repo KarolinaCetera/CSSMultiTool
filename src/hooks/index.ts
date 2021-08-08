@@ -1,5 +1,4 @@
-export * from "./useBorderForms";
-export * from "./useBorderProps";
+export * from "./borderService";
 export * from "./useBoxShadowProps";
 export * from "./useFontProps";
 export * from "./useRadiusMode";

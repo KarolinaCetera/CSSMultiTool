@@ -1,7 +1,8 @@
 import { Input, Select, Slider } from "UI";
 import { borderTypeOptions } from "const";
 import { useBorderPropsAll, userBorderRadiusCorner } from "./useBorderProps";
-import { FormHook, FormHookProps } from "../typings";
+import { FormHookProps, HookReturn } from "../../typings";
+import { useRadiusMode } from "../useRadiusMode";
 
 const useBorderTypeForm = ({ id, type, modifyStyle }) =>
 	Select({
@@ -35,8 +36,8 @@ const useBorderRadiusTLForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 
 const useBorderRadiusTRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 	Slider({
-		id: "Top left",
-		value: borderRadius.TL,
+		id: "Top right",
+		value: borderRadius.TR,
 		step: 1,
 		min: 0,
 		max: 100,
@@ -45,8 +46,8 @@ const useBorderRadiusTRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 
 const useBorderRadiusBRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 	Slider({
-		id: "Top left",
-		value: borderRadius.TL,
+		id: "Bottom right",
+		value: borderRadius.BR,
 		step: 1,
 		min: 0,
 		max: 100,
@@ -55,8 +56,8 @@ const useBorderRadiusBRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 
 const useBorderRadiusBLForm = ({ borderRadius, modifyStyle }) =>
 	Slider({
-		id: "Top left",
-		value: borderRadius.TL,
+		id: "Bottom left",
+		value: borderRadius.BL,
 		step: 1,
 		min: 0,
 		max: 100,
@@ -76,18 +77,54 @@ const useBorderRadiusForm = ({ id, borderStyles, modifyStyle }) =>
 export const useBorderForms = ({
 	id,
 	modifyStyle,
-}: FormHookProps): FormHook => {
+}: FormHookProps): HookReturn[] => {
 	const borderStyles = useBorderPropsAll();
 	const borderRadius = userBorderRadiusCorner();
+	const { mode } = useRadiusMode();
 
-	return {
-		typeForm: useBorderTypeForm({ id, type: borderTypeOptions, modifyStyle }),
-		colorForm: useBorderColorForm({ id, modifyStyle }),
-		widthForm: useBorderWidthForm({ id, borderStyles, modifyStyle }),
-		radiusTLForm: useBorderRadiusTLForm({ borderRadius, modifyStyle }),
-		radiusTRForm: useBorderRadiusTRForm({ borderRadius, modifyStyle }),
-		radiusBRForm: useBorderRadiusBRForm({ borderRadius, modifyStyle }),
-		radiusBLForm: useBorderRadiusBLForm({ borderRadius, modifyStyle }),
-		radiusForm: useBorderRadiusForm({ id, borderStyles, modifyStyle }),
-	};
+	const separateRadius = [
+		{
+			id: "type",
+			form: useBorderTypeForm({ id, type: borderTypeOptions, modifyStyle }),
+		},
+		{ id: "color", form: useBorderColorForm({ id, modifyStyle }) },
+		{
+			id: "width",
+			form: useBorderWidthForm({ id, borderStyles, modifyStyle }),
+		},
+		{
+			id: "radiusTL",
+			form: useBorderRadiusTLForm({ borderRadius, modifyStyle }),
+		},
+		{
+			id: "radiusTR",
+			form: useBorderRadiusTRForm({ borderRadius, modifyStyle }),
+		},
+		{
+			id: "radiusBR",
+			form: useBorderRadiusBRForm({ borderRadius, modifyStyle }),
+		},
+		{
+			id: "radiusBL",
+			form: useBorderRadiusBLForm({ borderRadius, modifyStyle }),
+		},
+	];
+
+	const allRadius = [
+		{
+			id: "type",
+			form: useBorderTypeForm({ id, type: borderTypeOptions, modifyStyle }),
+		},
+		{ id: "color", form: useBorderColorForm({ id, modifyStyle }) },
+		{
+			id: "width",
+			form: useBorderWidthForm({ id, borderStyles, modifyStyle }),
+		},
+		{
+			id: "radius",
+			form: useBorderRadiusForm({ id, borderStyles, modifyStyle }),
+		},
+	];
+
+	return mode === "all" ? allRadius : separateRadius;
 };

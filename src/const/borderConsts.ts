@@ -33,3 +33,8 @@ export const borderProps: CSSPropsTypes[] = [
 	{ id: "radiusBR", modifyStyle: setBorderRadiusBR },
 	{ id: "radiusBL", modifyStyle: setBorderRadiusBL },
 ];
+
+export const radiusMode = [
+	{ id: "all", labelText: "All corners" },
+	{ id: "separate", labelText: "Separate corners" },
+];

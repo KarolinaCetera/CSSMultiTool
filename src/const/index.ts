@@ -1,4 +1,4 @@
-export * from "./borderStyles";
+export * from "./borderConsts";
 export * from "./boxShadowStyles";
 export * from "./capitalize";
 export * from "./fontStyles";

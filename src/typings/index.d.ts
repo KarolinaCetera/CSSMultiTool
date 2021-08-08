@@ -145,6 +145,11 @@ interface FormHookProps {
 	[key: string];
 }
 
+interface HookReturn {
+	id: string;
+	form;
+}
+
 interface FormHook {
 	[key: string]: React.ReactElement<any, any> | null;
 }
