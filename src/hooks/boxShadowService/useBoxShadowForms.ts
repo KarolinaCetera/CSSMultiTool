@@ -57,12 +57,21 @@ const useBoxShadowVertical = ({ id, vertical, modifyStyle }) =>
 export const useBoxShadowForms = ({ id, modifyStyle }) => {
 	const { blur, horizontal, opacity, spread, vertical } = useBoxShadowProps();
 
-	return {
-		blurForm: useBoxShadowBlurForm({ id, blur, modifyStyle }),
-		colorForm: useBoxShadowColorForm({ id, modifyStyle }),
-		horizontalForm: useBoxShadowHorizontal({ id, horizontal, modifyStyle }),
-		opacityForm: useBoxShadowOpacity({ id, opacity, modifyStyle }),
-		spreadForm: useBoxShadowSpread({ id, spread, modifyStyle }),
-		verticalForm: useBoxShadowVertical({ id, vertical, modifyStyle }),
-	};
+	return [
+		{
+			id: "blur",
+			form: useBoxShadowBlurForm({ id, blur, modifyStyle }),
+		},
+		{ id: "color", form: useBoxShadowColorForm({ id, modifyStyle }) },
+		{
+			id: "horizontal",
+			form: useBoxShadowHorizontal({ id, horizontal, modifyStyle }),
+		},
+		{ id: "opacity", form: useBoxShadowOpacity({ id, opacity, modifyStyle }) },
+		{ id: "spread", form: useBoxShadowSpread({ id, spread, modifyStyle }) },
+		{
+			id: "vertical",
+			form: useBoxShadowVertical({ id, vertical, modifyStyle }),
+		},
+	];
 };

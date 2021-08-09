@@ -29,6 +29,7 @@ interface DrawerProps extends MenuElements {
 
 interface CSSPropsTypes {
 	id: string;
+	name?: string;
 	modifyStyle: ActionCreatorWithPayload<string>;
 }
 

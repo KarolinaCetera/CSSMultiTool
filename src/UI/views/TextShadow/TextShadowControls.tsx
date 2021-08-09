@@ -1,6 +1,6 @@
 import React from "react";
-import { placeProperForm } from "./utils/placeProperForm";
+import { placeTextShadowForms } from "./utils";
 
 export const TextShadowControls: React.FC = () => {
-	return <div>{placeProperForm()}</div>;
+	return <div>{placeTextShadowForms()}</div>;
 };

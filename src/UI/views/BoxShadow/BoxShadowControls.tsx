@@ -1,4 +1,6 @@
 import React from "react";
-import { placeProperForm } from "./utils/placeProperForm";
+import { placeBoxShadowForms } from "./utils";
 
-export const BoxShadowControls: React.FC = () => <div>{placeProperForm()}</div>;
+export const BoxShadowControls: React.FC = () => (
+	<div>{placeBoxShadowForms()}</div>
+);

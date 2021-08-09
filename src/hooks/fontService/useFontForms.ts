@@ -70,17 +70,26 @@ const useWordSpacingForm = ({ id, wordSpacing, modifyStyle }) =>
 		modifyStyle,
 	});
 
-export const useFontsForms = ({ id, modifyStyle }) => {
+export const useFontForms = ({ id, modifyStyle }) => {
 	const { fontSize, letterSpacing, lineHeight, wordSpacing } = useFontProps();
 
-	return {
-		colorForm: useFontColorForm({ id, modifyStyle }),
-		fontSizeForm: useFontSizeForm({ id, fontSize, modifyStyle }),
-		fontStyleForm: useFontStyleForm({ id, modifyStyle }),
-		fontWeightForm: useFontWeightForm({ id, modifyStyle }),
-		letterSpacingForm: useLetterSpacingForm({ id, letterSpacing, modifyStyle }),
-		lineHeightForm: useLineHeightForm({ id, lineHeight, modifyStyle }),
-		textTransformForm: useTextTransformForm({ id, modifyStyle }),
-		wordSpacingForm: useWordSpacingForm({ id, wordSpacing, modifyStyle }),
-	};
+	return [
+		{ id: "color", form: useFontColorForm({ id, modifyStyle }) },
+		{ id: "fontSize", form: useFontSizeForm({ id, fontSize, modifyStyle }) },
+		{ id: "fontStyle", form: useFontStyleForm({ id, modifyStyle }) },
+		{ id: "fontWeight", form: useFontWeightForm({ id, modifyStyle }) },
+		{
+			id: "letterSpacing",
+			form: useLetterSpacingForm({ id, letterSpacing, modifyStyle }),
+		},
+		{
+			id: "lineHeight",
+			form: useLineHeightForm({ id, lineHeight, modifyStyle }),
+		},
+		{ id: "textTransform", form: useTextTransformForm({ id, modifyStyle }) },
+		{
+			id: "wordSpacing",
+			form: useWordSpacingForm({ id, wordSpacing, modifyStyle }),
+		},
+	];
 };

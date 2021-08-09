@@ -1,4 +1,4 @@
 import React from "react";
-import { placeProperForm } from "./utils/placeProperForm";
+import { placeFontForms } from "./utils";
 
-export const FontsControls: React.FC = () => <div>{placeProperForm()}</div>;
+export const FontsControls: React.FC = () => <div>{placeFontForms()}</div>;
