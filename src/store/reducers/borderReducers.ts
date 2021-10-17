@@ -1,11 +1,12 @@
 import { combineReducers } from "@reduxjs/toolkit";
+
 import {
 	borderColorReducer,
+	borderRadiusBLReducer,
+	borderRadiusBRReducer,
 	borderRadiusReducer,
 	borderRadiusTLReducer,
 	borderRadiusTRReducer,
-	borderRadiusBRReducer,
-	borderRadiusBLReducer,
 	borderTypeReducer,
 	borderWidthReducer,
 } from "../features";

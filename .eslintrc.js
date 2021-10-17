@@ -19,7 +19,7 @@ module.exports = {
 		ecmaVersion: 12,
 		sourceType: "module",
 	},
-	plugins: ["react", "@typescript-eslint", "prettier"],
+	plugins: ["react", "@typescript-eslint", "prettier", "simple-import-sort"],
 	rules: {
 		"linebreak-style": ["error", "unix"],
 		"react/jsx-props-no-spreading": "off",
@@ -36,5 +36,8 @@ module.exports = {
 				ignoreComments: true,
 			},
 		],
+		"simple-import-sort/exports": "warn",
+		"simple-import-sort/imports": "warn",
+		"sort-imports": "off",
 	},
 };

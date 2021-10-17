@@ -1,0 +1,24 @@
+.input {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  input[type="color"] {
+    border-radius: 50%;
+    background: transparent;
+    height: 40px;
+    width: 40px;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    &::-webkit-color-swatch-wrapper {
+      padding: 0;
+    }
+
+    &::-webkit-color-swatch {
+      border: none;
+      border-radius: 50%;
+      padding: 0;
+    }
+
+  }
+}

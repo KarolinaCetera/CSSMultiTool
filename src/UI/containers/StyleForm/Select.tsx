@@ -1,14 +1,15 @@
-import React from "react";
-import classes from "../Form/Form.module.scss";
 import { capitalize } from "const";
+import React from "react";
 import { useDispatch } from "react-redux";
+
+import classes from "./Select.module.scss";
 
 export const Select = ({ id, type, modifyStyle }) => {
 	const dispatch = useDispatch();
 	return (
 		<div className={classes.select} key={id}>
 			<label htmlFor={id}>{capitalize(id)}</label>
-			<div>
+			<div className={classes.selectElement}>
 				<select
 					name={id}
 					id={id}

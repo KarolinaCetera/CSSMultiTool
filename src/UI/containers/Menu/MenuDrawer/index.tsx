@@ -1,7 +1,8 @@
-import React from "react";
 import { Button, Drawer } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
+import React from "react";
 import { DrawerProps } from "typings";
+
 import { MenuList } from "./MenuList";
 
 export const MenuDrawer: React.FC<DrawerProps> = ({

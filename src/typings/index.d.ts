@@ -1,7 +1,8 @@
 import "./styleProperties";
+
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
-import { DefaultRootState } from "react-redux";
 import { Dispatch } from "react";
+import { DefaultRootState } from "react-redux";
 
 interface ToggleDrawer {
 	toggleDrawer: (visibility: boolean) => void;
@@ -141,7 +142,8 @@ interface ControlProps {
 type ProperForm = (JSX.Element | false | undefined | null)[];
 
 interface FormHookProps {
-	id?: string | undefined;
+	id?: string;
+	type?: styleOption[];
 	modifyStyle: ActionCreatorWithPayload<any, string>;
 	[key: string];
 }
@@ -153,4 +155,9 @@ interface HookReturn {
 
 interface FormHook {
 	[key: string]: React.ReactElement<any, any> | null;
+}
+
+interface RadiusModeFeatures {
+	id: string;
+	labelText: string;
 }

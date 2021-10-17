@@ -1,10 +1,11 @@
-import React from "react";
-import { Example } from "UI";
 import {
 	useBorderPropsAll,
-	userBorderRadiusCorner,
 	useRadiusMode,
+	userBorderRadiusCorner,
 } from "hooks";
+import React from "react";
+import { Example } from "UI";
+
 import { setBorderStyle } from "../utils";
 
 export const BorderExample: React.FC = () => {

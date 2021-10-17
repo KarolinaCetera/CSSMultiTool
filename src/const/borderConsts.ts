@@ -1,17 +1,7 @@
-import {
-	setBorderColor,
-	setBorderRadius,
-	setBorderRadiusBL,
-	setBorderRadiusBR,
-	setBorderRadiusTL,
-	setBorderRadiusTR,
-	setBorderType,
-	setBorderWidth,
-} from "store";
-import { CSSPropsTypes, styleOption } from "typings";
+import * as borderFeatures from "store";
+import { CSSPropsTypes, RadiusModeFeatures, styleOption } from "typings";
 
 export const borderTypeOptions: styleOption[] = [
-	{ value: "", name: "Choose border type" },
 	{ value: "solid", name: "Solid" },
 	{ value: "dotted", name: "Dotted" },
 	{ value: "dashed", name: "Dashed" },
@@ -24,17 +14,17 @@ export const borderTypeOptions: styleOption[] = [
 ];
 
 export const borderProps: CSSPropsTypes[] = [
-	{ id: "width", modifyStyle: setBorderWidth },
-	{ id: "type", modifyStyle: setBorderType },
-	{ id: "color", modifyStyle: setBorderColor },
-	{ id: "radius", modifyStyle: setBorderRadius },
-	{ id: "radiusTL", modifyStyle: setBorderRadiusTL },
-	{ id: "radiusTR", modifyStyle: setBorderRadiusTR },
-	{ id: "radiusBR", modifyStyle: setBorderRadiusBR },
-	{ id: "radiusBL", modifyStyle: setBorderRadiusBL },
+	{ id: "width", modifyStyle: borderFeatures.setBorderWidth },
+	{ id: "type", modifyStyle: borderFeatures.setBorderType },
+	{ id: "color", modifyStyle: borderFeatures.setBorderColor },
+	{ id: "radius", modifyStyle: borderFeatures.setBorderRadius },
+	{ id: "radiusTL", modifyStyle: borderFeatures.setBorderRadiusTL },
+	{ id: "radiusTR", modifyStyle: borderFeatures.setBorderRadiusTR },
+	{ id: "radiusBR", modifyStyle: borderFeatures.setBorderRadiusBR },
+	{ id: "radiusBL", modifyStyle: borderFeatures.setBorderRadiusBL },
 ];
 
-export const radiusMode = [
+export const radiusMode: Array<RadiusModeFeatures> = [
 	{ id: "all", labelText: "All corners" },
 	{ id: "separate", labelText: "Separate corners" },
 ];

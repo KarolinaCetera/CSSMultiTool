@@ -1,7 +1,8 @@
+import { radiusMode } from "const";
 import React from "react";
+
 import classes from "./ModeControls.module.scss";
 import { ModeRadio } from "./ModeRadio";
-import { radiusMode } from "const";
 
 export const ModeControls: React.FC = () => (
 	<div className={classes.modeControls}>

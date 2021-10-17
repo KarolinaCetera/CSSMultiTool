@@ -1,7 +1,6 @@
 import React, { CSSProperties } from "react";
-import classes from "./Example.module.scss";
 
-// typowanie done
+import classes from "./Example.module.scss";
 
 export const Example: React.FC<{
 	style?: CSSProperties;

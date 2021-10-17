@@ -1,5 +1,11 @@
+import { withControls } from "HOC";
+
 import { BoxShadowControls } from "./BoxShadowControls";
 import { BoxShadowExample } from "./BoxShadowExample";
-import { withControls } from "../../../HOC";
+import { BoxShadowTitle } from "./BoxShadowTitle";
 
-export const BoxShadow = withControls(BoxShadowControls, BoxShadowExample);
+export const BoxShadow = withControls(
+	BoxShadowTitle,
+	BoxShadowControls,
+	BoxShadowExample,
+);

@@ -1,10 +1,11 @@
-import { useFontProps } from "./useFontProps";
 import {
 	fontStyleOptions,
 	fontWeightOptions,
 	textTransformOptions as transformType,
 } from "const";
 import { Input, Select, Slider } from "UI";
+
+import { useFontProps } from "./useFontProps";
 
 const useFontColorForm = ({ id, modifyStyle }) =>
 	Input({ id, type: "color", modifyStyle });

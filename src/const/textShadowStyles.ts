@@ -1,16 +1,10 @@
-import {
-	setTextShadowBlur,
-	setTextShadowColor,
-	setTextShadowHorizontal,
-	setTextShadowOpacity,
-	setTextShadowVertical,
-} from "store";
+import * as textShadowFeatures from "store";
 import { CSSPropsTypes } from "typings";
 
 export const textShadowProps: CSSPropsTypes[] = [
-	{ id: "blur", modifyStyle: setTextShadowBlur },
-	{ id: "color", modifyStyle: setTextShadowColor },
-	{ id: "horizontal", modifyStyle: setTextShadowHorizontal },
-	{ id: "opacity", modifyStyle: setTextShadowOpacity },
-	{ id: "vertical", modifyStyle: setTextShadowVertical },
+	{ id: "blur", modifyStyle: textShadowFeatures.setTextShadowBlur },
+	{ id: "color", modifyStyle: textShadowFeatures.setTextShadowColor },
+	{ id: "horizontal", modifyStyle: textShadowFeatures.setTextShadowHorizontal },
+	{ id: "opacity", modifyStyle: textShadowFeatures.setTextShadowOpacity },
+	{ id: "vertical", modifyStyle: textShadowFeatures.setTextShadowVertical },
 ];

@@ -1,4 +1,6 @@
-import { BorderControls, BorderExample } from "./BorderView";
 import { withControls } from "HOC";
 
-export const Border = withControls(BorderControls, BorderExample);
+import { BorderControls, BorderExample, BorderTitle } from "./BorderView";
+
+export * from "./ModeControls";
+export const Border = withControls(BorderTitle, BorderControls, BorderExample);

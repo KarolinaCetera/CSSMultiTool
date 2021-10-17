@@ -1,10 +1,7 @@
-@import "index.module";
-
 .viewBox {
   height: 90vh;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: relative;
   z-index: 2;

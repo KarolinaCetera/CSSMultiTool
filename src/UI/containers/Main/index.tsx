@@ -1,5 +1,6 @@
-import React from "react";
 import "./Main.module.scss";
+
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { MenuElements } from "typings";
 

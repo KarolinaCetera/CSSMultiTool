@@ -1,7 +1,8 @@
 import React from "react";
-import classes from "./MenuList.module.scss";
 import { DrawerProps } from "typings";
+
 import { MenuElement } from "./MenuElement";
+import classes from "./MenuList.module.scss";
 
 export const MenuList: React.FC<DrawerProps> = ({
 	menuElements,

@@ -1,8 +1,9 @@
 import React from "react";
-import classes from "./App.module.scss";
 import { BrowserRouter } from "react-router-dom";
-import { Header, Main } from "./UI";
+
+import classes from "./App.module.scss";
 import { menuElements } from "./const";
+import { Header, Main } from "./UI";
 
 const AppLoading: React.FC = () => <div>Loading...</div>;
 

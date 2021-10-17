@@ -1,35 +1,24 @@
-import {
-	setFontColor,
-	setFontSize,
-	setFontStyle,
-	setFontWeight,
-	setLetterSpacing,
-	setLineHeight,
-	setTextTransform,
-	setWordSpacing,
-} from "store";
+import * as fontsFeatures from "store";
 import { CSSPropsTypes, styleOption } from "typings";
 
 export const fontProps: CSSPropsTypes[] = [
-	{ id: "color", modifyStyle: setFontColor },
-	{ id: "size", modifyStyle: setFontSize },
-	{ id: "style", modifyStyle: setFontStyle },
-	{ id: "weight", modifyStyle: setFontWeight },
-	{ id: "letterSpacing", modifyStyle: setLetterSpacing },
-	{ id: "lineHeight", modifyStyle: setLineHeight },
-	{ id: "textTransform", modifyStyle: setTextTransform },
-	{ id: "wordSpacing", modifyStyle: setWordSpacing },
+	{ id: "color", modifyStyle: fontsFeatures.setFontColor },
+	{ id: "fontSize", modifyStyle: fontsFeatures.setFontSize },
+	{ id: "fontStyle", modifyStyle: fontsFeatures.setFontStyle },
+	{ id: "fontWeight", modifyStyle: fontsFeatures.setFontWeight },
+	{ id: "letterSpacing", modifyStyle: fontsFeatures.setLetterSpacing },
+	{ id: "lineHeight", modifyStyle: fontsFeatures.setLineHeight },
+	{ id: "textTransform", modifyStyle: fontsFeatures.setTextTransform },
+	{ id: "wordSpacing", modifyStyle: fontsFeatures.setWordSpacing },
 ];
 
 export const fontStyleOptions: styleOption[] = [
-	{ value: "", name: "Choose font style" },
 	{ value: "normal", name: "Normal" },
 	{ value: "italic", name: "Italic" },
 	{ value: "oblique", name: "Oblique" },
 ];
 
 export const fontWeightOptions: styleOption[] = [
-	{ value: "", name: "Choose font style" },
 	{ value: "normal", name: "Normal" },
 	{ value: "bold", name: "Bold" },
 	{ value: "lighter", name: "Lighter" },
@@ -46,16 +35,12 @@ export const fontWeightOptions: styleOption[] = [
 
 export const textTransformOptions: styleOption[] = [
 	{
-		value: "",
-		name: "Choose text transform option",
-	},
-	{
 		value: "none",
 		name: "None",
 	},
 	{
 		value: "capitalize",
-		name: "Capitalice",
+		name: "Capitalize",
 	},
 	{
 		value: "uppercase",

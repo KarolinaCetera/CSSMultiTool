@@ -1,5 +1,5 @@
 export * from "./textShadowBlurSlice";
-export * from "./textShadowVerticalSlice";
+export * from "./textShadowColorSlice";
 export * from "./textShadowHorizontalSlice";
 export * from "./textShadowOpacitySlice";
-export * from "./textShadowColorSlice";
+export * from "./textShadowVerticalSlice";

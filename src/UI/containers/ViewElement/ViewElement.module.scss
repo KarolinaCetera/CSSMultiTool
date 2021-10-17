@@ -1,20 +1,39 @@
 .viewElement {
   height: 80%;
   width: 35%;
-  padding: 40px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
+  padding: 20px 0;
   position: relative;
   z-index: 2;
   color: #3a3d45;
-  background: #b3b3b3;
+  background: #d5cac3;
   border-radius: 10px;
-  box-shadow: 0 0 53px -28px rgb(142, 142, 142);
+  box-shadow: 0 0 53px -28px rgb(205, 205, 205);
+  overflow: auto;
+  text-align: left;
+
+  h3 {
+    margin-top: 20px;
+    padding: 0 20px;
+    font-size: 30px;
+  }
 }
 
 .styleAndSample {
-  width: 50%;
-  flex-direction: column;
-  justify-content: space-around;
+
+
+  div {
+    background: #d5cac3;
+  }
+
+  div:first-child {
+    height: 70%;
+  }
+
+  div:last-child {
+    height: 20%;
+  }
 }

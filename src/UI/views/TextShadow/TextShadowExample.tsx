@@ -1,7 +1,7 @@
-import React from "react";
-import { Example } from "UI";
 import { useTextShadowProps } from "hooks";
+import React from "react";
 import { rgbColor } from "typings";
+import { Example } from "UI";
 
 export const TextShadowExample: React.FC = () => {
 	const textShadowStyles = useTextShadowProps();

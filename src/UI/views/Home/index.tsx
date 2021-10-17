@@ -1,7 +1,8 @@
-import React from "react";
-import classes from "./Home.module.scss";
-import { Link } from "react-router-dom";
 import { buyMeACoffee } from "const";
+import React from "react";
+import { Link } from "react-router-dom";
+
+import classes from "./Home.module.scss";
 
 export const Home: React.FC = () => {
 	return (

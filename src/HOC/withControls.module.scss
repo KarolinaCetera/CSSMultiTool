@@ -1,0 +1,30 @@
+.sample {
+  width: 60%;
+  height: 80%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+  }
+
+  .example {
+    height: 70%;
+    width: 100%;
+    background: #d5cac3;
+
+  }
+
+  .styleText {
+    height: 20%;
+    width: 100%;
+  }
+
+}

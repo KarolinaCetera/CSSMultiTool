@@ -1,11 +1,10 @@
 import React from "react";
-import classes from "./Border.module.scss";
-import { Form } from "UI";
-import { ModeControls } from "../ModeControls";
+import { Form, ModeControls } from "UI";
+
 import { placeBorderForms } from "../utils";
 
 export const BorderControls: React.FC = () => (
-	<div className={classes.border}>
+	<div style={{ width: "100%", height: "100%" }}>
 		<ModeControls />
 		<Form>{placeBorderForms()}</Form>
 	</div>

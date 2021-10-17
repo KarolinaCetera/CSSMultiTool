@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { MenuDrawer } from "./MenuDrawer";
 import { MenuElements } from "typings";
+
+import { MenuDrawer } from "./MenuDrawer";
 
 export const Menu: React.FC<MenuElements> = ({ menuElements }) => {
 	const [isOpen, setIsOpen] = useState(false);

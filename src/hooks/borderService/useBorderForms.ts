@@ -1,17 +1,22 @@
-import { Input, Select, Slider } from "UI";
 import { borderTypeOptions } from "const";
-import { useBorderPropsAll, userBorderRadiusCorner } from "./useBorderProps";
 import { FormHookProps, HookReturn } from "typings";
+import { Input, Select, Slider } from "UI";
+
+import { useBorderPropsAll, userBorderRadiusCorner } from "./useBorderProps";
 import { useRadiusMode } from "./useRadiusMode";
 
-const useBorderTypeForm = ({ id, type, modifyStyle }) =>
+const useBorderTypeForm = ({
+	id,
+	type,
+	modifyStyle,
+}: FormHookProps): JSX.Element =>
 	Select({
 		id,
 		type,
 		modifyStyle,
 	});
 
-const useBorderColorForm = ({ id, modifyStyle }) =>
+const useBorderColorForm = ({ id, modifyStyle }: FormHookProps) =>
 	Input({ id, type: "color", modifyStyle });
 
 const useBorderWidthForm = ({ id, borderStyles, modifyStyle }) =>

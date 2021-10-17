@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux";
-import { hexToRgb } from "utils";
 import {
 	ControlProps,
 	hooksReturnType,
 	rgbColor,
 	TextShadowStyles,
 } from "typings";
+import { hexToRgb } from "utils";
 
 const useTextShadowBlur = (): hooksReturnType =>
 	useSelector(

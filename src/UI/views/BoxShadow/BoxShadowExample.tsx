@@ -1,7 +1,7 @@
-import React from "react";
-import { Example } from "UI";
 import { useBoxShadowProps } from "hooks";
+import React from "react";
 import { rgbColor } from "typings";
+import { Example } from "UI";
 
 export const BoxShadowExample: React.FC = () => {
 	const boxShadowStyles = useBoxShadowProps();

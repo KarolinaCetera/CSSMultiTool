@@ -1,4 +1,5 @@
 import { Input, Slider } from "UI";
+
 import { useBoxShadowProps } from "./useBoxShadowProps";
 
 const useBoxShadowBlurForm = ({ id, blur, modifyStyle }) =>
@@ -28,7 +29,7 @@ const useBoxShadowOpacity = ({ id, opacity, modifyStyle }) =>
 	Slider({
 		id,
 		value: opacity,
-		step: 0.1,
+		step: 0.01,
 		min: 0,
 		max: 1,
 		modifyStyle,
@@ -39,8 +40,8 @@ const useBoxShadowSpread = ({ id, spread, modifyStyle }) =>
 		id,
 		value: spread,
 		step: 1,
-		min: -200,
-		max: 200,
+		min: -100,
+		max: 100,
 		modifyStyle,
 	});
 

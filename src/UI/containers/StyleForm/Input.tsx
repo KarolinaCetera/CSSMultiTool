@@ -1,11 +1,12 @@
-import React from "react";
-import classes from "../Form/Form.module.scss";
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { capitalize } from "const";
+import React from "react";
 import { useDispatch } from "react-redux";
 
+import classes from "./Input.module.scss";
+
 interface InputComponentProps {
-	id: string;
+	id: string | undefined;
 	type: string;
 	modifyStyle: ActionCreatorWithPayload<any>;
 }

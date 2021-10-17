@@ -1,5 +1,6 @@
-import { Input, Slider } from "UI";
 import { FormHookProps, HookReturn } from "typings";
+import { Input, Slider } from "UI";
+
 import { useTextShadowProps } from "./useTextShadowProps";
 
 const useTextShadowBlurForm = ({ id, textShadowStyles, modifyStyle }) =>
