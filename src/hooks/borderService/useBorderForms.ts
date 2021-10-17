@@ -1,7 +1,7 @@
 import { Input, Select, Slider } from "UI";
 import { borderTypeOptions } from "const";
 import { useBorderPropsAll, userBorderRadiusCorner } from "./useBorderProps";
-import { FormHookProps, HookReturn } from "../../typings";
+import { FormHookProps, HookReturn } from "typings";
 import { useRadiusMode } from "./useRadiusMode";
 
 const useBorderTypeForm = ({ id, type, modifyStyle }) =>

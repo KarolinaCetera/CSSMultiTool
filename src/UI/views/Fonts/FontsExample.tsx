@@ -1,6 +1,6 @@
 import React, { CSSProperties } from "react";
 import { useFontProps } from "hooks";
-import { Example } from "../../components";
+import { Example } from "UI";
 
 export const FontsExample: React.FC = () => {
 	const fontStyles = useFontProps();

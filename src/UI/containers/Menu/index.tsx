@@ -4,19 +4,19 @@ import { MenuElements } from "typings";
 
 export const Menu: React.FC<MenuElements> = ({ menuElements }) => {
 	const [isOpen, setIsOpen] = useState(false);
+	const eventKeyDown = (event: React.MouseEvent) => event.type === "keydown";
+	const eventTab = (event: React.KeyboardEvent) => event.key === "Tab";
+	const eventShift = (event: React.KeyboardEvent) => event.key === "Shift";
+	const isEventShiftOrTab = (event: React.KeyboardEvent) =>
+		eventTab(event) || eventShift(event);
 
 	const toggleDrawer = () => (
 		event: React.KeyboardEvent | React.MouseEvent,
 	) => {
-		if (
-			event.type === "keydown" &&
-			((event as React.KeyboardEvent).key === "Tab" ||
-				(event as React.KeyboardEvent).key === "Shift")
-		) {
-			return;
-		}
-
-		setIsOpen(!isOpen);
+		!(
+			eventKeyDown(event as React.MouseEvent) &&
+			isEventShiftOrTab(event as React.KeyboardEvent)
+		) && setIsOpen(!isOpen);
 	};
 
 	return (

@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./Border.module.scss";
-import { Form } from "UI/index";
+import { Form } from "UI";
 import { ModeControls } from "../ModeControls";
 import { placeBorderForms } from "../utils";
 

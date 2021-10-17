@@ -1,6 +1,6 @@
 .viewElement {
   height: 80%;
-  width: 45%;
+  width: 35%;
   padding: 40px;
   display: flex;
   justify-content: center;
@@ -8,9 +8,13 @@
   position: relative;
   z-index: 2;
   color: #3a3d45;
+  background: #b3b3b3;
+  border-radius: 10px;
+  box-shadow: 0 0 53px -28px rgb(142, 142, 142);
 }
 
 .styleAndSample {
+  width: 50%;
   flex-direction: column;
   justify-content: space-around;
 }

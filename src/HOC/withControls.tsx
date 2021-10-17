@@ -1,6 +1,5 @@
 import React from "react";
-import { ViewElement, ViewBox } from "UI";
-import StyleText from "../UI/components/StyleText";
+import { ViewElement, ViewBox, StyleText } from "UI";
 
 export const withControls: (
 	ControlsComponent: React.FC,
