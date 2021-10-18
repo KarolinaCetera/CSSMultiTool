@@ -29,7 +29,7 @@ const About = React.lazy(() =>
 	import("../UI/views/About").then(({ About }) => ({ default: About })),
 );
 
-export const menuElements: menuElement[] = [
+export const menuElements: Array<menuElement> = [
 	{ name: "Home", path: "/", component: Home },
 	{ name: "Border", path: "/border", component: Border },
 	{ name: "BoxShadow", path: "/boxShadow", component: BoxShadow },

@@ -11,7 +11,7 @@ export const withControls: (
 	TitleComponent,
 	ControlsComponent,
 	ExampleComponent,
-) => () => (
+) => (): JSX.Element => (
 	<ViewBox>
 		<ViewElement>
 			<ViewTitle>

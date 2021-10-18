@@ -1,8 +1,14 @@
+import { ReactElement } from "react";
 import { Input, Slider } from "UI";
 
+import { FormHookProps, HookReturn } from "../../typings";
 import { useBoxShadowProps } from "./useBoxShadowProps";
 
-const useBoxShadowBlurForm = ({ id, blur, modifyStyle }) =>
+const useBoxShadowBlurForm = ({
+	id,
+	blur,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: blur,
@@ -12,10 +18,17 @@ const useBoxShadowBlurForm = ({ id, blur, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBoxShadowColorForm = ({ id, modifyStyle }) =>
+const useBoxShadowColorForm = ({
+	id,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Input({ id, type: "color", modifyStyle });
 
-const useBoxShadowHorizontal = ({ id, horizontal, modifyStyle }) =>
+const useBoxShadowHorizontal = ({
+	id,
+	horizontal,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: horizontal,
@@ -25,7 +38,11 @@ const useBoxShadowHorizontal = ({ id, horizontal, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBoxShadowOpacity = ({ id, opacity, modifyStyle }) =>
+const useBoxShadowOpacity = ({
+	id,
+	opacity,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: opacity,
@@ -35,7 +52,11 @@ const useBoxShadowOpacity = ({ id, opacity, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBoxShadowSpread = ({ id, spread, modifyStyle }) =>
+const useBoxShadowSpread = ({
+	id,
+	spread,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: spread,
@@ -45,7 +66,11 @@ const useBoxShadowSpread = ({ id, spread, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBoxShadowVertical = ({ id, vertical, modifyStyle }) =>
+const useBoxShadowVertical = ({
+	id,
+	vertical,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: vertical,
@@ -55,7 +80,10 @@ const useBoxShadowVertical = ({ id, vertical, modifyStyle }) =>
 		modifyStyle,
 	});
 
-export const useBoxShadowForms = ({ id, modifyStyle }) => {
+export const useBoxShadowForms = ({
+	id,
+	modifyStyle,
+}: FormHookProps): Array<HookReturn> => {
 	const { blur, horizontal, opacity, spread, vertical } = useBoxShadowProps();
 
 	return [

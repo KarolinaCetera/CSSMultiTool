@@ -1,7 +1,7 @@
 import * as borderFeatures from "store";
 import { CSSPropsTypes, RadiusModeFeatures, styleOption } from "typings";
 
-export const borderTypeOptions: styleOption[] = [
+export const borderTypeOptions: Array<styleOption> = [
 	{ value: "solid", name: "Solid" },
 	{ value: "dotted", name: "Dotted" },
 	{ value: "dashed", name: "Dashed" },
@@ -13,7 +13,7 @@ export const borderTypeOptions: styleOption[] = [
 	{ value: "outset", name: "Outset" },
 ];
 
-export const borderProps: CSSPropsTypes[] = [
+export const borderProps: Array<CSSPropsTypes> = [
 	{ id: "width", modifyStyle: borderFeatures.setBorderWidth },
 	{ id: "type", modifyStyle: borderFeatures.setBorderType },
 	{ id: "color", modifyStyle: borderFeatures.setBorderColor },

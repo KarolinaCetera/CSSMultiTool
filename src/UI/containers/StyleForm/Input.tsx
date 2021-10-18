@@ -8,7 +8,7 @@ import classes from "./Input.module.scss";
 interface InputComponentProps {
 	id: string | undefined;
 	type: string;
-	modifyStyle: ActionCreatorWithPayload<any>;
+	modifyStyle: ActionCreatorWithPayload<string>;
 }
 
 export const Input: React.FC<InputComponentProps> = ({

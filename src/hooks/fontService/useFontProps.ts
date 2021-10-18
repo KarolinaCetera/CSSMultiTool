@@ -1,5 +1,19 @@
-import { useSelector } from "react-redux";
-import { ControlProps, FontStyles, hooksReturnType } from "typings";
+import { DefaultRootState, useSelector } from "react-redux";
+import { ControlProps, hooksReturnType } from "typings";
+
+interface FontStyles extends DefaultRootState {
+	fonts: {
+		fontColor: { color: string };
+		fontSize: { fontSize: number };
+		fontStyle: { fontStyle: string };
+		fontWeight: { fontWeight: string | number };
+		letterSpacing: { letterSpacing: number };
+		lineHeight: { lineHeight: number };
+		textDecoration: { textDecoration: string };
+		textTransform: { textTransform: string };
+		wordSpacing: { wordSpacing: string };
+	};
+}
 
 const useFontColor = (): hooksReturnType =>
 	useSelector((state: FontStyles) => state.fonts.fontColor.color);

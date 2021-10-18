@@ -1,4 +1,4 @@
-import { rgbColor } from "../typings";
+import { rgbColor } from "typings";
 
 export const hexToRgb = (hex: string): rgbColor => {
 	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

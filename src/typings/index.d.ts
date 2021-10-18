@@ -1,8 +1,5 @@
-import "./styleProperties";
-
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
-import { Dispatch } from "react";
-import { DefaultRootState } from "react-redux";
+import { ReactElement } from "react";
 
 interface ToggleDrawer {
 	toggleDrawer: (visibility: boolean) => void;
@@ -34,31 +31,11 @@ interface CSSPropsTypes {
 	modifyStyle: ActionCreatorWithPayload<string>;
 }
 
-interface BorderStyles extends DefaultRootState {
-	border: {
-		borderWidth: { width: number };
-		borderType: { type: string };
-		borderColor: { color: string };
-		borderRadius: { radius: number };
-		borderRadiusTL: { radiusTL: number };
-		borderRadiusTR: { radiusTR: number };
-		borderRadiusBR: { radiusBR: number };
-		borderRadiusBL: { radiusBL: number };
-	};
-}
-
-interface BoxShadowStyles extends DefaultRootState {
-	boxShadow: {
-		boxShadowBlur: {
-			blur: number;
+interface Global {
+	global: {
+		radiusMode: {
+			mode: string;
 		};
-		boxShadowColor: {
-			shadowColor: string;
-		};
-		boxShadowHorizontal: { horizontal: number };
-		boxShadowOpacity: { opacity: number };
-		boxShadowSpread: { spread: number };
-		boxShadowVertical: { vertical: number };
 	};
 }
 
@@ -69,92 +46,26 @@ type dropShadowTypes = {
 	color: string;
 };
 
-interface FilterStyles extends DefaultRootState {
-	filter: {
-		filterBlur: { blur: number };
-		filterBrightness: { brightness: number };
-		filterContrast: { contrast: number };
-		filterDropShadow: {
-			dropShadow: dropShadowTypes;
-		};
-		filterGreyScale: { greyScale: number };
-		filterHueRotate: { hueRotate: number };
-		filterInvert: { invert: number };
-		filterOpacity: { opacity: number };
-		filterSaturate: { saturate: number };
-		filterSepia: { sepia: number };
-	};
-}
-
-interface FontStyles extends DefaultRootState {
-	fonts: {
-		fontColor: { color: string };
-		fontSize: { fontSize: number };
-		fontStyle: { fontStyle: string };
-		fontWeight: { fontWeight: string | number };
-		letterSpacing: { letterSpacing: number };
-		lineHeight: { lineHeight: number };
-		textDecoration: { textDecoration: string };
-		textTransform: { textTransform: string };
-		wordSpacing: { wordSpacing: string };
-	};
-}
-
-interface TextShadowStyles extends DefaultRootState {
-	textShadow: {
-		textShadowBlur: {
-			blur: number;
-		};
-		textShadowColor: {
-			textColor: string;
-		};
-		textShadowHorizontal: { textHorizontal: number };
-		textShadowOpacity: { textOpacity: number };
-		textShadowVertical: { textVertical: number };
-	};
-}
-
-interface Global {
-	global: {
-		radiusMode: {
-			mode: string;
-		};
-	};
-}
-
-type dispatchGeneric = {
-	payload: ActionCreatorWithPayload<any>;
-	type: string;
-};
-
-type CustomDispatch = Dispatch<dispatchGeneric>;
-
-type rgbColor =
-	| { r: number; g: number; b: number }
-	| { r: string; g: string; b: string };
-
 type hooksReturnType = string | number | dropShadowTypes | rgbColor;
 
 interface ControlProps {
 	[key: string]: hooksReturnType;
 }
 
-type ProperForm = (JSX.Element | false | undefined | null)[];
+type rgbColor =
+	| { r: number; g: number; b: number }
+	| { r: string; g: string; b: string };
 
 interface FormHookProps {
 	id?: string;
 	type?: styleOption[];
-	modifyStyle: ActionCreatorWithPayload<any, string>;
+	modifyStyle: ActionCreatorWithPayload<any>;
 	[key: string];
 }
 
 interface HookReturn {
 	id: string;
-	form;
-}
-
-interface FormHook {
-	[key: string]: React.ReactElement<any, any> | null;
+	form: ReactElement<string, string> | null | undefined;
 }
 
 interface RadiusModeFeatures {

@@ -1,9 +1,14 @@
+import { ReactElement } from "react";
 import { FormHookProps, HookReturn } from "typings";
 import { Input, Slider } from "UI";
 
 import { useTextShadowProps } from "./useTextShadowProps";
 
-const useTextShadowBlurForm = ({ id, textShadowStyles, modifyStyle }) =>
+const useTextShadowBlurForm = ({
+	id,
+	textShadowStyles,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: textShadowStyles.blur,
@@ -13,10 +18,17 @@ const useTextShadowBlurForm = ({ id, textShadowStyles, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useTextShadowColorForm = ({ id, modifyStyle }) =>
+const useTextShadowColorForm = ({
+	id,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Input({ id, type: "color", modifyStyle });
 
-const useTextShadowHorizontalForm = ({ id, textShadowStyles, modifyStyle }) =>
+const useTextShadowHorizontalForm = ({
+	id,
+	textShadowStyles,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: textShadowStyles.horizontal,
@@ -26,7 +38,11 @@ const useTextShadowHorizontalForm = ({ id, textShadowStyles, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useTextShadowOpacityForm = ({ id, textShadowStyles, modifyStyle }) =>
+const useTextShadowOpacityForm = ({
+	id,
+	textShadowStyles,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: textShadowStyles.opacity,
@@ -36,7 +52,11 @@ const useTextShadowOpacityForm = ({ id, textShadowStyles, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useTextShadowVerticalForm = ({ id, textShadowStyles, modifyStyle }) =>
+const useTextShadowVerticalForm = ({
+	id,
+	textShadowStyles,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: textShadowStyles.vertical,
@@ -49,7 +69,7 @@ const useTextShadowVerticalForm = ({ id, textShadowStyles, modifyStyle }) =>
 export const useTextShadowForms = ({
 	id,
 	modifyStyle,
-}: FormHookProps): HookReturn[] => {
+}: FormHookProps): Array<HookReturn> => {
 	const textShadowStyles = useTextShadowProps();
 
 	return [

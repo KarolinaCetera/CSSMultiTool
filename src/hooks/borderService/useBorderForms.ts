@@ -1,25 +1,33 @@
 import { borderTypeOptions } from "const";
+import { ReactElement } from "react";
 import { FormHookProps, HookReturn } from "typings";
 import { Input, Select, Slider } from "UI";
 
-import { useBorderPropsAll, userBorderRadiusCorner } from "./useBorderProps";
+import { useBorderPropsAll, useBorderRadiusCorner } from "./useBorderProps";
 import { useRadiusMode } from "./useRadiusMode";
 
 const useBorderTypeForm = ({
 	id,
 	type,
 	modifyStyle,
-}: FormHookProps): JSX.Element =>
+}: FormHookProps): ReactElement<string, string> | null =>
 	Select({
 		id,
 		type,
 		modifyStyle,
 	});
 
-const useBorderColorForm = ({ id, modifyStyle }: FormHookProps) =>
+const useBorderColorForm = ({
+	id,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Input({ id, type: "color", modifyStyle });
 
-const useBorderWidthForm = ({ id, borderStyles, modifyStyle }) =>
+const useBorderWidthForm = ({
+	id,
+	borderStyles,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: borderStyles.width,
@@ -29,7 +37,10 @@ const useBorderWidthForm = ({ id, borderStyles, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusTLForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
+const useBorderRadiusTLForm = ({
+	borderRadius,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id: "Top left",
 		value: borderRadius.TL,
@@ -39,7 +50,10 @@ const useBorderRadiusTLForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusTRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
+const useBorderRadiusTRForm = ({
+	borderRadius,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id: "Top right",
 		value: borderRadius.TR,
@@ -49,7 +63,10 @@ const useBorderRadiusTRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusBRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
+const useBorderRadiusBRForm = ({
+	borderRadius,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id: "Bottom right",
 		value: borderRadius.BR,
@@ -59,7 +76,10 @@ const useBorderRadiusBRForm = ({ borderRadius, modifyStyle }: FormHookProps) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusBLForm = ({ borderRadius, modifyStyle }) =>
+const useBorderRadiusBLForm = ({
+	borderRadius,
+	modifyStyle,
+}): ReactElement<string, string> | null =>
 	Slider({
 		id: "Bottom left",
 		value: borderRadius.BL,
@@ -69,7 +89,11 @@ const useBorderRadiusBLForm = ({ borderRadius, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useBorderRadiusForm = ({ id, borderStyles, modifyStyle }) =>
+const useBorderRadiusForm = ({
+	id,
+	borderStyles,
+	modifyStyle,
+}): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: borderStyles.radius,
@@ -82,9 +106,9 @@ const useBorderRadiusForm = ({ id, borderStyles, modifyStyle }) =>
 export const useBorderForms = ({
 	id,
 	modifyStyle,
-}: FormHookProps): HookReturn[] => {
+}: FormHookProps): Array<HookReturn> => {
 	const borderStyles = useBorderPropsAll();
-	const borderRadius = userBorderRadiusCorner();
+	const borderRadius = useBorderRadiusCorner();
 	const { mode } = useRadiusMode();
 
 	const separateRadius = [

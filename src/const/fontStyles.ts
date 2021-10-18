@@ -1,7 +1,7 @@
 import * as fontsFeatures from "store";
 import { CSSPropsTypes, styleOption } from "typings";
 
-export const fontProps: CSSPropsTypes[] = [
+export const fontProps: Array<CSSPropsTypes> = [
 	{ id: "color", modifyStyle: fontsFeatures.setFontColor },
 	{ id: "fontSize", modifyStyle: fontsFeatures.setFontSize },
 	{ id: "fontStyle", modifyStyle: fontsFeatures.setFontStyle },
@@ -12,13 +12,13 @@ export const fontProps: CSSPropsTypes[] = [
 	{ id: "wordSpacing", modifyStyle: fontsFeatures.setWordSpacing },
 ];
 
-export const fontStyleOptions: styleOption[] = [
+export const fontStyleOptions: Array<styleOption> = [
 	{ value: "normal", name: "Normal" },
 	{ value: "italic", name: "Italic" },
 	{ value: "oblique", name: "Oblique" },
 ];
 
-export const fontWeightOptions: styleOption[] = [
+export const fontWeightOptions: Array<styleOption> = [
 	{ value: "normal", name: "Normal" },
 	{ value: "bold", name: "Bold" },
 	{ value: "lighter", name: "Lighter" },
@@ -33,7 +33,7 @@ export const fontWeightOptions: styleOption[] = [
 	{ value: 900, name: "900" },
 ];
 
-export const textTransformOptions: styleOption[] = [
+export const textTransformOptions: Array<styleOption> = [
 	{
 		value: "none",
 		name: "None",

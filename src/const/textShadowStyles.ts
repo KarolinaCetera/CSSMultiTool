@@ -1,7 +1,7 @@
 import * as textShadowFeatures from "store";
 import { CSSPropsTypes } from "typings";
 
-export const textShadowProps: CSSPropsTypes[] = [
+export const textShadowProps: Array<CSSPropsTypes> = [
 	{ id: "blur", modifyStyle: textShadowFeatures.setTextShadowBlur },
 	{ id: "color", modifyStyle: textShadowFeatures.setTextShadowColor },
 	{ id: "horizontal", modifyStyle: textShadowFeatures.setTextShadowHorizontal },

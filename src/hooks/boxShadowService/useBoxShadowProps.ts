@@ -1,16 +1,26 @@
-import { useSelector } from "react-redux";
-import {
-	BoxShadowStyles,
-	ControlProps,
-	hooksReturnType,
-	rgbColor,
-} from "typings";
+import { DefaultRootState, useSelector } from "react-redux";
+import { ControlProps, hooksReturnType } from "typings";
 import { hexToRgb } from "utils";
+
+interface BoxShadowStyles extends DefaultRootState {
+	boxShadow: {
+		boxShadowBlur: {
+			blur: number;
+		};
+		boxShadowColor: {
+			shadowColor: string;
+		};
+		boxShadowHorizontal: { horizontal: number };
+		boxShadowOpacity: { opacity: number };
+		boxShadowSpread: { spread: number };
+		boxShadowVertical: { vertical: number };
+	};
+}
 
 const useBoxShadowBlur = (): hooksReturnType =>
 	useSelector((state: BoxShadowStyles) => state.boxShadow.boxShadowBlur.blur);
 
-const useBoxShadowColor = (): rgbColor =>
+const useBoxShadowColor = (): hooksReturnType =>
 	useSelector((state: BoxShadowStyles) =>
 		hexToRgb(state.boxShadow.boxShadowColor.shadowColor),
 	);

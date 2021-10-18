@@ -1,7 +1,7 @@
 import * as boxShadowFeatures from "store";
 import { CSSPropsTypes } from "typings";
 
-export const boxShadowProps: CSSPropsTypes[] = [
+export const boxShadowProps: Array<CSSPropsTypes> = [
 	{ id: "blur", modifyStyle: boxShadowFeatures.setBoxShadowBlur },
 	{ id: "color", modifyStyle: boxShadowFeatures.setBoxShadowColor },
 	{ id: "horizontal", modifyStyle: boxShadowFeatures.setBoxShadowHorizontal },

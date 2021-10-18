@@ -1,18 +1,27 @@
-import { useSelector } from "react-redux";
-import {
-	ControlProps,
-	hooksReturnType,
-	rgbColor,
-	TextShadowStyles,
-} from "typings";
+import { DefaultRootState, useSelector } from "react-redux";
+import { ControlProps, hooksReturnType } from "typings";
 import { hexToRgb } from "utils";
+
+interface TextShadowStyles extends DefaultRootState {
+	textShadow: {
+		textShadowBlur: {
+			blur: number;
+		};
+		textShadowColor: {
+			textColor: string;
+		};
+		textShadowHorizontal: { textHorizontal: number };
+		textShadowOpacity: { textOpacity: number };
+		textShadowVertical: { textVertical: number };
+	};
+}
 
 const useTextShadowBlur = (): hooksReturnType =>
 	useSelector(
 		(state: TextShadowStyles) => state.textShadow.textShadowBlur.blur,
 	);
 
-const useTextShadowColor = (): rgbColor =>
+const useTextShadowColor = (): hooksReturnType =>
 	useSelector((state: TextShadowStyles) =>
 		hexToRgb(state.textShadow.textShadowColor.textColor),
 	);

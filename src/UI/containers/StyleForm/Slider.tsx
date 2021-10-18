@@ -6,12 +6,12 @@ import { useDispatch } from "react-redux";
 import classes from "./Slider.module.scss";
 
 interface SliderComponentProps {
-	id: string;
+	id: string | undefined;
 	value;
 	step: number;
 	min: number;
 	max: number;
-	modifyStyle: ActionCreatorWithPayload<any>;
+	modifyStyle: ActionCreatorWithPayload<string>;
 }
 
 export const Slider: React.FC<SliderComponentProps> = ({

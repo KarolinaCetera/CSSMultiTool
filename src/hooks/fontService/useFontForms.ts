@@ -3,14 +3,20 @@ import {
 	fontWeightOptions,
 	textTransformOptions as transformType,
 } from "const";
+import { ReactElement } from "react";
 import { Input, Select, Slider } from "UI";
 
+import { FormHookProps, HookReturn } from "../../typings";
 import { useFontProps } from "./useFontProps";
 
 const useFontColorForm = ({ id, modifyStyle }) =>
 	Input({ id, type: "color", modifyStyle });
 
-const useFontSizeForm = ({ id, fontSize, modifyStyle }) =>
+const useFontSizeForm = ({
+	id,
+	fontSize,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: fontSize,
@@ -20,21 +26,31 @@ const useFontSizeForm = ({ id, fontSize, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useFontWeightForm = ({ id, modifyStyle }) =>
+const useFontWeightForm = ({
+	id,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Select({
 		id,
 		type: fontWeightOptions,
 		modifyStyle,
 	});
 
-const useFontStyleForm = ({ id, modifyStyle }) =>
+const useFontStyleForm = ({
+	id,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Select({
 		id,
 		type: fontStyleOptions,
 		modifyStyle,
 	});
 
-const useLetterSpacingForm = ({ id, letterSpacing, modifyStyle }) =>
+const useLetterSpacingForm = ({
+	id,
+	letterSpacing,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: letterSpacing,
@@ -44,7 +60,11 @@ const useLetterSpacingForm = ({ id, letterSpacing, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useLineHeightForm = ({ id, lineHeight, modifyStyle }) =>
+const useLineHeightForm = ({
+	id,
+	lineHeight,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: lineHeight,
@@ -54,14 +74,21 @@ const useLineHeightForm = ({ id, lineHeight, modifyStyle }) =>
 		modifyStyle,
 	});
 
-const useTextTransformForm = ({ id, modifyStyle }) =>
+const useTextTransformForm = ({
+	id,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Select({
 		id,
 		type: transformType,
 		modifyStyle,
 	});
 
-const useWordSpacingForm = ({ id, wordSpacing, modifyStyle }) =>
+const useWordSpacingForm = ({
+	id,
+	wordSpacing,
+	modifyStyle,
+}: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
 		id,
 		value: wordSpacing,
@@ -71,7 +98,10 @@ const useWordSpacingForm = ({ id, wordSpacing, modifyStyle }) =>
 		modifyStyle,
 	});
 
-export const useFontForms = ({ id, modifyStyle }) => {
+export const useFontForms = ({
+	id,
+	modifyStyle,
+}: FormHookProps): Array<HookReturn> => {
 	const { fontSize, letterSpacing, lineHeight, wordSpacing } = useFontProps();
 
 	return [

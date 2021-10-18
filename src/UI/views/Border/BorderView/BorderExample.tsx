@@ -1,8 +1,4 @@
-import {
-	useBorderPropsAll,
-	useRadiusMode,
-	userBorderRadiusCorner,
-} from "hooks";
+import { useBorderPropsAll, useBorderRadiusCorner, useRadiusMode } from "hooks";
 import React from "react";
 import { Example } from "UI";
 
@@ -10,7 +6,7 @@ import { setBorderStyle } from "../utils";
 
 export const BorderExample: React.FC = () => {
 	const borderStyle = useBorderPropsAll();
-	const borderRadius = userBorderRadiusCorner();
+	const borderRadius = useBorderRadiusCorner();
 
 	const { mode } = useRadiusMode();
 
