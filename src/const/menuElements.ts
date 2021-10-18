@@ -9,6 +9,12 @@ const Border = React.lazy(() =>
 	import("../UI/views/Border").then(({ Border }) => ({ default: Border })),
 );
 
+const BorderRadius = React.lazy(() =>
+	import("../UI/views/BorderRadius").then(({ BorderRadius }) => ({
+		default: BorderRadius,
+	})),
+);
+
 const BoxShadow = React.lazy(() =>
 	import("../UI/views/BoxShadow").then(({ BoxShadow }) => ({
 		default: BoxShadow,
@@ -32,6 +38,7 @@ const About = React.lazy(() =>
 export const menuElements: Array<menuElement> = [
 	{ name: "Home", path: "/", component: Home },
 	{ name: "Border", path: "/border", component: Border },
+	{ name: "BorderRadius", path: "/borderRadius", component: BorderRadius },
 	{ name: "BoxShadow", path: "/boxShadow", component: BoxShadow },
 	{ name: "Fonts", path: "/fonts", component: Fonts },
 	{ name: "Text-shadow", path: "/textShadow", component: TextShadow },

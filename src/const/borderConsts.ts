@@ -1,5 +1,5 @@
 import * as borderFeatures from "store";
-import { CSSPropsTypes, RadiusModeFeatures, styleOption } from "typings";
+import { CSSPropsTypes, styleOption } from "typings";
 
 export const borderTypeOptions: Array<styleOption> = [
 	{ value: "solid", name: "Solid" },
@@ -17,14 +17,4 @@ export const borderProps: Array<CSSPropsTypes> = [
 	{ id: "width", modifyStyle: borderFeatures.setBorderWidth },
 	{ id: "type", modifyStyle: borderFeatures.setBorderType },
 	{ id: "color", modifyStyle: borderFeatures.setBorderColor },
-	{ id: "radius", modifyStyle: borderFeatures.setBorderRadius },
-	{ id: "radiusTL", modifyStyle: borderFeatures.setBorderRadiusTL },
-	{ id: "radiusTR", modifyStyle: borderFeatures.setBorderRadiusTR },
-	{ id: "radiusBR", modifyStyle: borderFeatures.setBorderRadiusBR },
-	{ id: "radiusBL", modifyStyle: borderFeatures.setBorderRadiusBL },
-];
-
-export const radiusMode: Array<RadiusModeFeatures> = [
-	{ id: "all", labelText: "All corners" },
-	{ id: "separate", labelText: "Separate corners" },
 ];

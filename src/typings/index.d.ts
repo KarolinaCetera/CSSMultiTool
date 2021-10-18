@@ -46,7 +46,7 @@ type dropShadowTypes = {
 	color: string;
 };
 
-type hooksReturnType = string | number | dropShadowTypes | rgbColor;
+type hooksReturnType = string | number | dropShadowTypes | rgbColor | any;
 
 interface ControlProps {
 	[key: string]: hooksReturnType;

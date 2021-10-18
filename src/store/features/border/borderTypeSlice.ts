@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const borderTypeSlice = createSlice({
 	name: "borderType",
 	initialState: {
-		type: "none",
+		type: "solid",
 	},
 	reducers: {
 		setBorderType: (state, action) => {

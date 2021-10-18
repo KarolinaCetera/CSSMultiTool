@@ -3,12 +3,12 @@ import { CSSPropsTypes, styleOption } from "typings";
 
 export const fontProps: Array<CSSPropsTypes> = [
 	{ id: "color", modifyStyle: fontsFeatures.setFontColor },
-	{ id: "fontSize", modifyStyle: fontsFeatures.setFontSize },
 	{ id: "fontStyle", modifyStyle: fontsFeatures.setFontStyle },
 	{ id: "fontWeight", modifyStyle: fontsFeatures.setFontWeight },
+	{ id: "fontSize", modifyStyle: fontsFeatures.setFontSize },
+	{ id: "textTransform", modifyStyle: fontsFeatures.setTextTransform },
 	{ id: "letterSpacing", modifyStyle: fontsFeatures.setLetterSpacing },
 	{ id: "lineHeight", modifyStyle: fontsFeatures.setLineHeight },
-	{ id: "textTransform", modifyStyle: fontsFeatures.setTextTransform },
 	{ id: "wordSpacing", modifyStyle: fontsFeatures.setWordSpacing },
 ];
 

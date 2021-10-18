@@ -6,6 +6,7 @@ import {
 } from "@reduxjs/toolkit";
 
 import {
+	borderRadiusReducers,
 	borderReducers,
 	boxShadowReducers,
 	fontsReducers,
@@ -46,20 +47,23 @@ type Fonts = EmptyObject & {
 type Border = EmptyObject & {
 	borderWidth: { width: number };
 	borderType: { type: string };
-	borderRadiusBL: { radiusBL: number };
 	borderColor: { color: string };
-	borderRadius: { radius: number };
+};
+
+type BorderRadius = EmptyObject & {
+	borderRadiusBL: { radiusBL: number };
 	borderRadiusBR: { radiusBR: number };
 	borderRadiusTR: { radiusTR: number };
 	borderRadiusTL: { radiusTL: number };
 };
 
 type ReducerState = EmptyObject & {
-	global: Global;
-	boxShadow: BoxShadow;
-	textShadow: TextShadow;
-	fonts: Fonts;
 	border: Border;
+	borderRadius: BorderRadius;
+	boxShadow: BoxShadow;
+	fonts: Fonts;
+	global: Global;
+	textShadow: TextShadow;
 };
 
 export const createReducer = (
@@ -67,6 +71,7 @@ export const createReducer = (
 ): Reducer<CombinedState<ReducerState>> =>
 	combineReducers({
 		border: borderReducers,
+		borderRadius: borderRadiusReducers,
 		boxShadow: boxShadowReducers,
 		fonts: fontsReducers,
 		global: globalReducers,

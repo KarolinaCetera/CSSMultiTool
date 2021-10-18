@@ -17,18 +17,15 @@ export const Input: React.FC<InputComponentProps> = ({
 	modifyStyle,
 }: InputComponentProps) => {
 	const dispatch = useDispatch();
+	const onInputChange = (e) => {
+		e.preventDefault();
+		dispatch(modifyStyle(e.target.value));
+	};
 
 	return (
 		<div className={classes.input} key={id}>
 			<label htmlFor={id}>{capitalize(type)}</label>
-			<input
-				id={id}
-				type={type}
-				onChange={(e) => {
-					e.preventDefault();
-					dispatch(modifyStyle(e.target.value));
-				}}
-			/>
+			<input id={id} type={type} onChange={onInputChange} />
 		</div>
 	);
 };

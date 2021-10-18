@@ -1,6 +1,6 @@
 import { useFontProps } from "hooks";
 import React, { CSSProperties } from "react";
-import { Example } from "UI";
+import { Example, StyleText } from "UI";
 
 export const FontsExample: React.FC = () => {
 	const fontStyles = useFontProps();
@@ -17,8 +17,11 @@ export const FontsExample: React.FC = () => {
 	} as CSSProperties;
 
 	return (
-		<Example>
-			<p style={fontStyle}>Styled text</p>
-		</Example>
+		<>
+			<Example style={fontStyle}>
+				<p style={fontStyle}>Styled text</p>
+			</Example>
+			<StyleText styleText={fontStyle as { [key: string]: string }} />
+		</>
 	);
 };

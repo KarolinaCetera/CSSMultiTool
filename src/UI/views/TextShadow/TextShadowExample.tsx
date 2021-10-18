@@ -1,7 +1,7 @@
 import { useTextShadowProps } from "hooks";
 import React from "react";
 import { rgbColor } from "typings";
-import { Example } from "UI";
+import { Example, StyleText } from "UI";
 
 export const TextShadowExample: React.FC = () => {
 	const textShadowStyles = useTextShadowProps();
@@ -12,8 +12,11 @@ export const TextShadowExample: React.FC = () => {
 	};
 
 	return (
-		<Example>
-			<p style={textShadowStyle}>This text gets shadow</p>
-		</Example>
+		<>
+			<Example style={textShadowStyle}>
+				<p style={textShadowStyle}>This text gets shadow</p>
+			</Example>
+			<StyleText styleText={textShadowStyle} />
+		</>
 	);
 };

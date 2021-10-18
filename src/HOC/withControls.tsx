@@ -1,7 +1,5 @@
 import React from "react";
-import { StyleText, ViewBox, ViewElement, ViewTitle } from "UI";
-
-import classes from "./withControls.module.scss";
+import { ViewBox, ViewElement, ViewTitle } from "UI";
 
 export const withControls: (
 	ViewTitle: React.FC,
@@ -19,13 +17,8 @@ export const withControls: (
 			</ViewTitle>
 			<ControlsComponent />
 		</ViewElement>
-		<div className={classes.sample}>
-			<div className={classes.example}>
-				<ExampleComponent />
-			</div>
-			<div className={classes.styleText}>
-				<StyleText />
-			</div>
-		</div>
+		<ViewElement elementClass>
+			<ExampleComponent />
+		</ViewElement>
 	</ViewBox>
 );

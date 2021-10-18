@@ -23,6 +23,10 @@ export const Slider: React.FC<SliderComponentProps> = ({
 	modifyStyle,
 }: SliderComponentProps) => {
 	const dispatch = useDispatch();
+	const onSliderChange = (e) => {
+		e.preventDefault();
+		dispatch(modifyStyle(e.target.value));
+	};
 
 	return (
 		<div className={classes.slider} key={id}>
@@ -34,10 +38,7 @@ export const Slider: React.FC<SliderComponentProps> = ({
 					step={step}
 					min={min}
 					max={max}
-					onChange={(e) => {
-						e.preventDefault();
-						dispatch(modifyStyle(e.target.value));
-					}}
+					onChange={onSliderChange}
 				/>
 			</div>
 			<div className={classes.sliderElement}>
@@ -49,10 +50,7 @@ export const Slider: React.FC<SliderComponentProps> = ({
 					step={step}
 					min={min}
 					max={max}
-					onChange={(e) => {
-						e.preventDefault();
-						dispatch(modifyStyle(e.target.value));
-					}}
+					onChange={onSliderChange}
 				/>
 			</div>
 		</div>
