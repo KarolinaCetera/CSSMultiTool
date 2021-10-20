@@ -11,7 +11,9 @@ export const Home: React.FC = () => {
 			<h3>Home of modern CSS generators</h3>
 			<div className={classes.links}>
 				<Link to="/about">Check my portfolio</Link>
-				<a href={buyMeACoffee}>Buy me a Coffee</a>
+				<a href={buyMeACoffee} target="_blank" rel="noreferrer">
+					Buy me a Coffee
+				</a>
 			</div>
 		</div>
 	);

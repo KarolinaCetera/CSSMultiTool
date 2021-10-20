@@ -8,6 +8,7 @@ export const TextShadowExample: React.FC = () => {
 	const color = textShadowStyles.color as rgbColor;
 
 	const textShadowStyle = {
+		color: "black",
 		textShadow: `${textShadowStyles.horizontal}px ${textShadowStyles.vertical}px ${textShadowStyles.blur}px rgba(${color.r},${color.g},${color.b},${textShadowStyles.opacity})`,
 	};
 
