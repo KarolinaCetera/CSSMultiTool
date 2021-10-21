@@ -12,6 +12,8 @@ export const TextShadowExample: React.FC = () => {
 		textShadow: `${textShadowStyles.horizontal}px ${textShadowStyles.vertical}px ${textShadowStyles.blur}px rgba(${color.r},${color.g},${color.b},${textShadowStyles.opacity})`,
 	};
 
+	// dwa komponenty - zbiorczy example i zbiorczy controls (ale nie HOC!)
+
 	return (
 		<>
 			<Example style={textShadowStyle}>

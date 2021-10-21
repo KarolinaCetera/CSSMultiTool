@@ -1,5 +1,11 @@
+@import "breakpoints";
+
 main {
   width: 90vw;
   margin: 0 auto;
   color: rgb(75, 75, 75);
+
+  @include md {
+    height: 90vh;
+  }
 }

@@ -55,3 +55,8 @@ $breakpoints: (
         + "Available breakpoints are: #{map-keys($breakpoints)}.";
   }
 }
+
+body {
+  width: 100vw;
+  background-color: #afafaf;
+}

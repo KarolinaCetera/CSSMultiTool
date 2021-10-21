@@ -1,8 +1,17 @@
+@import "breakpoints";
+
 .viewBox {
-  height: 90vh;
+  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 2;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  @include lg {
+    height: 90vh;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
+

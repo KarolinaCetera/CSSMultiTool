@@ -1,8 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import classes from "./ViewElement.module.scss";
 
-export const ViewElement: React.FC<{ children?; elementClass? }> = (props) => {
+export const ViewElement: React.FC<{
+	children?: ReactNode;
+	elementClass?: boolean;
+}> = (props) => {
 	const viewElementClasses = `
 	${classes.viewElement} 
 	${props.elementClass && classes.sample}

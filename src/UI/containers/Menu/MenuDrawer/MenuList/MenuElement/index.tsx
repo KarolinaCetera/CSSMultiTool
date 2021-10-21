@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { voidToggleDrawer } from "typings";
 
 import classes from "./MenuElement.module.scss";
 
 interface MenuElement {
 	name: string;
 	path: string;
-	toggleDrawer;
+	toggleDrawer: voidToggleDrawer;
 }
 
 export const MenuElement: React.FC<MenuElement> = ({

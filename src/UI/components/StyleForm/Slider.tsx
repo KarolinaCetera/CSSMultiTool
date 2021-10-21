@@ -1,29 +1,20 @@
-import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { capitalize } from "const";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
+import { FormHookProps } from "typings";
 
 import classes from "./Slider.module.scss";
 
-interface SliderComponentProps {
-	id: string | undefined;
-	value;
-	step: number;
-	min: number;
-	max: number;
-	modifyStyle: ActionCreatorWithPayload<string>;
-}
-
-export const Slider: React.FC<SliderComponentProps> = ({
+export const Slider: React.FC<FormHookProps> = ({
 	id,
 	value,
 	step,
 	min,
 	max,
 	modifyStyle,
-}: SliderComponentProps) => {
+}) => {
 	const dispatch = useDispatch();
-	const onSliderChange = (e) => {
+	const onSliderChange = (e: ChangeEvent<HTMLInputElement>): void => {
 		e.preventDefault();
 		dispatch(modifyStyle(e.target.value));
 	};

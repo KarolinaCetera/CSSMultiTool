@@ -1,11 +1,10 @@
+@import "breakpoints";
+
 .App {
-  height: 100vh;
-  width: 100vw;
-  display: block;
-  background-color: #afafaf;
-  text-align: center;
-  max-height: 100vh;
-  max-width: 100vw;
-  position: relative;
+  @include md {
+    height: 100vh;
+    max-height: 100vh;
+    max-width: 100vw;
+  }
 }
 

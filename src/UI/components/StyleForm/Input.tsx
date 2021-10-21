@@ -1,6 +1,6 @@
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
 import { capitalize } from "const";
-import React from "react";
+import React, { ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 
 import classes from "./Input.module.scss";
@@ -15,9 +15,9 @@ export const Input: React.FC<InputComponentProps> = ({
 	id,
 	type,
 	modifyStyle,
-}: InputComponentProps) => {
+}) => {
 	const dispatch = useDispatch();
-	const onInputChange = (e) => {
+	const onInputChange = (e: ChangeEvent<HTMLInputElement>): void => {
 		e.preventDefault();
 		dispatch(modifyStyle(e.target.value));
 	};

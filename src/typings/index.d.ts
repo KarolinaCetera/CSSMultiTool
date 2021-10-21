@@ -20,8 +20,16 @@ type MenuElements = {
 	menuElements: menuElement[];
 };
 
+type voidToggleDrawer = () => (
+	event: React.KeyboardEvent | React.MouseEvent,
+) => void;
+
+type defaultToggleDrawer = (
+	openDrawer: boolean,
+) => (event: React.KeyboardEvent | React.MouseEvent) => void;
+
 interface DrawerProps extends MenuElements {
-	toggleDrawer;
+	toggleDrawer: voidToggleDrawer | defaultToggleDrawer;
 	isOpen?: boolean;
 }
 
@@ -60,6 +68,10 @@ interface FormHookProps {
 	id?: string;
 	type?: styleOption[];
 	modifyStyle: ActionCreatorWithPayload<any>;
+	value?: string;
+	step?: number;
+	min?: number;
+	max?: number;
 	[key: string];
 }
 

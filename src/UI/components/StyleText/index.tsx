@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./StyleText.module.scss";
 
-export const StyleText: React.FC<{ styleText: { [key: string]: string } }> = ({
+export const StyleText: React.FC<{ styleText: { [p: string]: string } }> = ({
 	styleText,
 }) => {
 	const style = {
@@ -10,9 +10,9 @@ export const StyleText: React.FC<{ styleText: { [key: string]: string } }> = ({
 	};
 
 	const styleString = Object.entries(style)
-		.map(([k, v]) => {
-			k = k.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
-			return `${k}: ${v};`;
+		.map(([key, value]) => {
+			key = key.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
+			return `${key}: ${value};`;
 		})
 		.join("\n");
 

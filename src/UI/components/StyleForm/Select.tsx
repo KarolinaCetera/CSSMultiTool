@@ -1,17 +1,13 @@
 import { capitalize } from "const";
-import React, { ReactElement } from "react";
+import React, { ChangeEvent } from "react";
 import { useDispatch } from "react-redux";
 import { FormHookProps } from "typings";
 
 import classes from "./Select.module.scss";
 
-export const Select = ({
-	id,
-	type,
-	modifyStyle,
-}: FormHookProps): ReactElement<string, string> | null => {
+export const Select: React.FC<FormHookProps> = ({ id, type, modifyStyle }) => {
 	const dispatch = useDispatch();
-	const onSelectChange = (e) => {
+	const onSelectChange = (e: ChangeEvent<HTMLSelectElement>): void => {
 		e.preventDefault();
 		dispatch(modifyStyle(e.target.value));
 	};
