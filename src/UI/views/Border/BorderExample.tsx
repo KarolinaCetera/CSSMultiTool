@@ -1,6 +1,6 @@
 import { useBorderProps } from "hooks";
 import React from "react";
-import { Example, StyleText } from "UI/index";
+import { ExampleComponent } from "UI";
 
 export const BorderExample: React.FC = () => {
 	const borderStyles = useBorderProps();
@@ -9,10 +9,5 @@ export const BorderExample: React.FC = () => {
 		border: `${borderStyles.width}px ${borderStyles.type} ${borderStyles.color}`,
 	};
 
-	return (
-		<>
-			<Example style={borderStyle} />
-			<StyleText styleText={borderStyle} />
-		</>
-	);
+	return <ExampleComponent style={borderStyle} />;
 };

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 
 import classes from "./StyleText.module.scss";
 
-export const StyleText: React.FC<{ styleText: { [p: string]: string } }> = ({
+export const StyleText: React.FC<{ styleText: CSSProperties }> = ({
 	styleText,
 }) => {
 	const style = {

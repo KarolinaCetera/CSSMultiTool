@@ -1,5 +1,11 @@
+@import "breakpoints";
+
 .menuList {
   height: 100%;
-  width: 25vw;
+  width: 40vw;
   background-color: #4B4B4B;
+
+  @include xl {
+    width: 25vw;
+  }
 }

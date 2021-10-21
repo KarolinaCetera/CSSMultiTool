@@ -1,7 +1,7 @@
 import { useTextShadowProps } from "hooks";
 import React from "react";
 import { rgbColor } from "typings";
-import { Example, StyleText } from "UI";
+import { ExampleComponent } from "UI";
 
 export const TextShadowExample: React.FC = () => {
 	const textShadowStyles = useTextShadowProps();
@@ -12,14 +12,10 @@ export const TextShadowExample: React.FC = () => {
 		textShadow: `${textShadowStyles.horizontal}px ${textShadowStyles.vertical}px ${textShadowStyles.blur}px rgba(${color.r},${color.g},${color.b},${textShadowStyles.opacity})`,
 	};
 
-	// dwa komponenty - zbiorczy example i zbiorczy controls (ale nie HOC!)
-
 	return (
-		<>
-			<Example style={textShadowStyle}>
-				<p style={textShadowStyle}>This text gets shadow</p>
-			</Example>
-			<StyleText styleText={textShadowStyle} />
-		</>
+		<ExampleComponent
+			style={textShadowStyle}
+			exampleChildren={<p style={textShadowStyle}>Styled text</p>}
+		/>
 	);
 };

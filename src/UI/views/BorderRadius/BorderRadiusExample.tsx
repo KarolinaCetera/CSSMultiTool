@@ -1,6 +1,6 @@
 import { useBorderRadius } from "hooks";
 import React from "react";
-import { Example, StyleText } from "UI";
+import { ExampleComponent } from "UI";
 
 export const BorderRadiusExample: React.FC = () => {
 	const borderRadiusStyles = useBorderRadius();
@@ -12,10 +12,5 @@ export const BorderRadiusExample: React.FC = () => {
 		borderBottomLeftRadius: `${borderRadiusStyles.BL}px`,
 	};
 
-	return (
-		<>
-			<Example style={borderRadiusStyle} />
-			<StyleText styleText={borderRadiusStyle} />
-		</>
-	);
+	return <ExampleComponent style={borderRadiusStyle} />;
 };
