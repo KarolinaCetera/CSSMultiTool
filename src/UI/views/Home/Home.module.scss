@@ -1,20 +1,39 @@
+@import "breakpoints";
+
 .home {
-  width: 50%;
   margin: 0 auto;
   padding-top: 80px;
   font-size: 30px;
   position: relative;
   z-index: 2;
+  text-align: center;
+
+  @include md {
+    width: 80%;
+  }
 
   h2, h3 {
-    padding: 20px;
+    padding: 20px 0;
     font-weight: normal;
-    letter-spacing: 5px;
+    letter-spacing: 2px;
+
+    @include md {
+      width: 70%;
+      margin: 0 auto;
+      letter-spacing: 3px;
+    }
+
+    @include lg {
+      width: 50%;
+    }
   }
 
   .links {
-    width: 60%;
     margin: 30px auto;
+    @include md {
+      width: 60%;
+    }
+
     a {
       display: block;
       margin-bottom: 10px;
