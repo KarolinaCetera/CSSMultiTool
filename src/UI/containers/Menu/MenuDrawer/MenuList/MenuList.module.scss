@@ -2,10 +2,10 @@
 
 .menuList {
   height: 100%;
-  width: 40vw;
+  width: 80vw;
   background-color: #4B4B4B;
 
-  @include xl {
-    width: 25vw;
+  @include md {
+    width: 40vw;
   }
 }

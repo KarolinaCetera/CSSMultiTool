@@ -6,4 +6,3 @@ export * from "./Main";
 export * from "./Menu";
 export * from "./ViewBox";
 export * from "./ViewElement";
-export * from "./ViewTitle";

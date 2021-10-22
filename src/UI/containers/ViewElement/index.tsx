@@ -4,12 +4,10 @@ import classes from "./ViewElement.module.scss";
 
 export const ViewElement: React.FC<{
 	children?: ReactNode;
-	elementClass?: boolean;
+	elementClass: string;
 }> = (props) => {
-	const viewElementClasses = `
-	${classes.viewElement} 
-	${props.elementClass && classes.sample}
-	`;
-
+	const viewElementClasses = `${classes.viewElement} ${
+		classes[props.elementClass]
+	}`;
 	return <div className={viewElementClasses}>{props.children}</div>;
 };

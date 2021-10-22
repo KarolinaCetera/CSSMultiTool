@@ -3,27 +3,21 @@
 .viewElement {
   margin: 20px 0;
   color: #3a3d45;
-  background-color: rgba(232, 232, 232, 0.49);
+  background-color: rgba(232, 232, 232, 0.32);
   text-align: left;
   overflow: auto;
 
-  @include md {
-    height: 45%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-  }
+  &.controls {
+   @include lg {
+     height: 80vh;
+     width: 35%;
+   }
 
-  @include lg {
-    height: auto;
-    max-height: 80vh;
-    width: 35%;
-  }
-
-  h3 {
-    margin-top: 20px;
-    padding: 0 20px;
-    font-size: 30px;
+    h3 {
+      margin-top: 20px;
+      padding: 0 20px;
+      font-size: 30px;
+    }
   }
 
   &.sample {
@@ -33,32 +27,9 @@
     justify-content: space-between;
     overflow: hidden;
 
-    @include md {
-      height: 50%;
-    }
-
     @include lg {
-      height: 90%;
+      height: 80vh;
       width: 60%;
-    }
-
-    & > div {
-      width: 100%;
-    }
-
-    div:first-child {
-      height: 50%;
-      div {
-        height: 250px;
-        width: 250px;
-        background: #683468;
-        margin: 40px auto;
-      }
-    }
-
-    div:last-child {
-      height: 40%;
-      width: 100%;
     }
   }
 }

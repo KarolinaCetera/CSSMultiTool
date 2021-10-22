@@ -1,0 +1,16 @@
+@import "breakpoints";
+
+.example {
+  height: 50%;
+
+  @include md {
+    height: 60%;
+  }
+
+  div {
+    height: 250px;
+    width: 250px;
+    background: #683468;
+    margin: 40px auto;
+  }
+}

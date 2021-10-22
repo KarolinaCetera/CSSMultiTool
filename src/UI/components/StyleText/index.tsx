@@ -16,11 +16,24 @@ export const StyleText: React.FC<{ styleText: CSSProperties }> = ({
 		})
 		.join("\n");
 
+	const copyStyle = async () => {
+		try {
+			await navigator.clipboard.writeText(styleString);
+		} catch (err) {
+			console.error("Failed to copy: ", err);
+		}
+	};
+
 	return (
 		<div className={classes.styleText}>
 			<div>
-				<p>CSS Code:</p>
-				<pre>{styleString}</pre>
+				<div className={classes.styleTextHeader}>
+					<p>CSS Code:</p>
+					<button type="button" onClick={copyStyle}>
+						Copy
+					</button>
+				</div>
+				<pre className={classes.pre}>{styleString}</pre>
 			</div>
 		</div>
 	);

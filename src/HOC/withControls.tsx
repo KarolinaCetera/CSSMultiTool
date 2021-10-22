@@ -1,5 +1,5 @@
 import React from "react";
-import { ViewBox, ViewElement, ViewTitle } from "UI";
+import { ViewBox, ViewElement } from "UI";
 
 export const withControls: (
 	ViewTitle: React.FC,
@@ -11,13 +11,11 @@ export const withControls: (
 	ExampleComponent,
 ) => (): JSX.Element => (
 	<ViewBox>
-		<ViewElement>
-			<ViewTitle>
-				<TitleComponent />
-			</ViewTitle>
+		<ViewElement elementClass="controls">
+			<TitleComponent />
 			<ControlsComponent />
 		</ViewElement>
-		<ViewElement elementClass>
+		<ViewElement elementClass="sample">
 			<ExampleComponent />
 		</ViewElement>
 	</ViewBox>
