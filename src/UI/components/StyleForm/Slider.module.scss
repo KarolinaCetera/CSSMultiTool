@@ -6,16 +6,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    input {
-      width: 15%;
-      padding: 10px;
-      border: none;
-      border-radius: 10px;
-      background: #f3f3f3;
-      opacity: .7;
-      font-size: 15px;
-      font-family: "Courier New", sans-serif;
-      text-align: center;
+    div {
+      display: flex;
+      align-items: center;
+      input {
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background: #f3f3f3;
+        opacity: .7;
+        font-size: 15px;
+        font-family: "Courier New", sans-serif;
+        text-align: center;
+      }
+
+      span {
+        margin: 0 10px;
+        font-size: 15px;
+      }
     }
   }
   .sliderElement {

@@ -23,14 +23,17 @@ export const Slider: React.FC<FormHookProps> = ({
 		<div className={classes.slider} key={id}>
 			<div className={classes.inputElement}>
 				<label htmlFor={id}>{capitalize(id)}</label>
-				<input
-					type="number"
-					value={value}
-					step={step}
-					min={min}
-					max={max}
-					onChange={onSliderChange}
-				/>
+				<div>
+					<input
+						type="number"
+						value={value}
+						step={step}
+						min={min}
+						max={max}
+						onChange={onSliderChange}
+					/>
+					<span>px</span>
+				</div>
 			</div>
 			<div className={classes.sliderElement}>
 				{" "}
