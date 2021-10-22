@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import classes from "./Input.module.scss";
 
 interface InputComponentProps {
-	id: string | undefined;
+	id: string;
 	type: string;
 	modifyStyle: ActionCreatorWithPayload<string>;
 }

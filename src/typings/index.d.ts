@@ -1,5 +1,5 @@
 import { ActionCreatorWithPayload } from "@reduxjs/toolkit";
-import { ReactElement } from "react";
+import React, { ReactElement } from "react";
 
 interface ToggleDrawer {
 	toggleDrawer: (visibility: boolean) => void;
@@ -17,12 +17,12 @@ interface menuElement {
 }
 
 type MenuElements = {
-	menuElements: menuElement[];
+	menuElements: Array<menuElement>;
 };
 
-type voidToggleDrawer = () => (
-	event: React.KeyboardEvent | React.MouseEvent,
-) => void;
+type DrawerEvent = React.KeyboardEvent | React.MouseEvent;
+
+type voidToggleDrawer = () => (event: DrawerEvent) => void;
 
 type defaultToggleDrawer = (
 	openDrawer: boolean,
@@ -39,14 +39,6 @@ interface CSSPropsTypes {
 	modifyStyle: ActionCreatorWithPayload<string>;
 }
 
-interface Global {
-	global: {
-		radiusMode: {
-			mode: string;
-		};
-	};
-}
-
 type dropShadowTypes = {
 	offsetX: number;
 	offsetY: number;
@@ -54,7 +46,7 @@ type dropShadowTypes = {
 	color: string;
 };
 
-type hooksReturnType = string | number | dropShadowTypes | rgbColor | any;
+type hooksReturnType = string | number | dropShadowTypes | rgbColor | unknown;
 
 interface ControlProps {
 	[key: string]: hooksReturnType;
@@ -65,9 +57,9 @@ type rgbColor =
 	| { r: string; g: string; b: string };
 
 interface FormHookProps {
-	id?: string;
+	id: string;
 	type?: styleOption[];
-	modifyStyle: ActionCreatorWithPayload<any>;
+	modifyStyle: ActionCreatorWithPayload<string>;
 	value?: string;
 	step?: number;
 	min?: number;
@@ -78,9 +70,4 @@ interface FormHookProps {
 interface HookReturn {
 	id: string;
 	form: ReactElement<string, string> | null | undefined;
-}
-
-interface RadiusModeFeatures {
-	id: string;
-	labelText: string;
 }

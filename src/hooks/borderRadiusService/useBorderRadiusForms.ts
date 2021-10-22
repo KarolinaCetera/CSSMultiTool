@@ -5,11 +5,12 @@ import { Slider } from "UI";
 import { useBorderRadius } from "./useBorderRadiusProps";
 
 const useBorderRadiusTLForm = ({
+	id,
 	borderRadius,
 	modifyStyle,
 }: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
-		id: "Top left",
+		id,
 		value: borderRadius.TL,
 		step: 1,
 		min: 0,
@@ -18,11 +19,12 @@ const useBorderRadiusTLForm = ({
 	});
 
 const useBorderRadiusTRForm = ({
+	id,
 	borderRadius,
 	modifyStyle,
 }: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
-		id: "Top right",
+		id,
 		value: borderRadius.TR,
 		step: 1,
 		min: 0,
@@ -31,11 +33,12 @@ const useBorderRadiusTRForm = ({
 	});
 
 const useBorderRadiusBRForm = ({
+	id,
 	borderRadius,
 	modifyStyle,
 }: FormHookProps): ReactElement<string, string> | null =>
 	Slider({
-		id: "Bottom right",
+		id,
 		value: borderRadius.BR,
 		step: 1,
 		min: 0,
@@ -44,11 +47,12 @@ const useBorderRadiusBRForm = ({
 	});
 
 const useBorderRadiusBLForm = ({
+	id,
 	borderRadius,
 	modifyStyle,
 }): ReactElement<string, string> | null =>
 	Slider({
-		id: "Bottom left",
+		id,
 		value: borderRadius.BL,
 		step: 1,
 		min: 0,
@@ -64,19 +68,35 @@ export const useBorderRadiusForms = ({
 	return [
 		{
 			id: "radiusTL",
-			form: useBorderRadiusTLForm({ borderRadius, modifyStyle }),
+			form: useBorderRadiusTLForm({
+				id: "Top left",
+				borderRadius,
+				modifyStyle,
+			}),
 		},
 		{
 			id: "radiusTR",
-			form: useBorderRadiusTRForm({ borderRadius, modifyStyle }),
+			form: useBorderRadiusTRForm({
+				id: "Top right",
+				borderRadius,
+				modifyStyle,
+			}),
 		},
 		{
 			id: "radiusBR",
-			form: useBorderRadiusBRForm({ borderRadius, modifyStyle }),
+			form: useBorderRadiusBRForm({
+				id: "Bottom right",
+				borderRadius,
+				modifyStyle,
+			}),
 		},
 		{
 			id: "radiusBL",
-			form: useBorderRadiusBLForm({ borderRadius, modifyStyle }),
+			form: useBorderRadiusBLForm({
+				id: "Bottom left",
+				borderRadius,
+				modifyStyle,
+			}),
 		},
 	];
 };
