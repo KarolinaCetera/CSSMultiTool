@@ -9,6 +9,12 @@ export const MenuList: React.FC<DrawerProps> = ({
 	toggleDrawer,
 }) => (
 	<ul className={classes.menuList}>
+		<li
+			className={classes.closeButton}
+			onClick={(toggleDrawer as voidToggleDrawer)()}
+		>
+			X
+		</li>
 		{menuElements.map((menuElement) => (
 			<MenuElement
 				toggleDrawer={toggleDrawer as voidToggleDrawer}

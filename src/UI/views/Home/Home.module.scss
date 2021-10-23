@@ -4,18 +4,17 @@
   margin: 0 auto;
   padding-top: 80px;
   font-size: 30px;
-  position: relative;
-  z-index: 2;
   text-align: center;
 
   @include md {
     width: 80%;
   }
 
-  h2, h3 {
+  h3 {
     padding: 20px 0;
     font-weight: normal;
     letter-spacing: 2px;
+    font-size: 20px;
 
     @include md {
       width: 70%;
